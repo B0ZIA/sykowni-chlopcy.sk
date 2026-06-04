@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sykowni Chłopcy – Prace Budowlane</title>
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      color: #333;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Header / Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+    .logo img {
+      display: block;
+      width: 280px;
+      height: auto;
+      transition: width 0.2s;
+    }
+
+    /* Przycisk hamburger (ukryty desktopowo) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 22px;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    nav {
+      position: relative;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+      transition: max-height 0.3s ease;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      font-weight: 500;
+      color: #333;
+      padding: 5px;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover {
+      color: #233A56;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 10px;
+    }
+    .lang-switch button {
+      background: transparent;
+      border: 2px solid #233A56;
+      color: #233A56;
+      padding: 5px 10px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .lang-switch button:hover,
+    .lang-switch button.active {
+      background: #233A56;
+      color: #fff;
+      border-color: #1C2C45;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 60vh;
+      background: url('mian_background.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: font-size 0.2s;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      transition: font-size 0.2s;
+    }
+
+    /* Services Section */
+    .section {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #233A56;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: font-size 0.2s;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .service-content {
+      padding: 20px;
+    }
+    .service-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #233A56;
+      font-weight: 700;
+      transition: font-size 0.2s;
+    }
+    .service-content p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+      transition: font-size 0.2s;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: flex-start;
+      transition: flex-direction 0.2s;
+    }
+    .contact-info {
+      flex: 1 1 320px;
+      background: #eef7fc;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: padding 0.2s;
+    }
+    .contact-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #233A56;
+      font-weight: 500;
+      transition: font-size 0.2s;
+    }
+    .contact-info p, .contact-info a {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #333;
+      line-height: 1.4;
+      transition: font-size 0.2s;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .contact-form {
+      flex: 1 1 400px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: padding 0.2s;
+    }
+    .contact-form form label {
+      display: block;
+      font-size: 0.95rem;
+      margin-top: 15px;
+      color: #333;
+      font-weight: 500;
+      transition: font-size 0.2s;
+    }
+    .contact-form form input, 
+    .contact-form form textarea {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 0.95rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      transition: font-size 0.2s;
+    }
+    .contact-form form button {
+      margin-top: 20px;
+      background-color: #233A56;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .contact-form form button:hover {
+      background-color: #1C2C45;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #233A56;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      transition: font-size 0.2s;
+    }
+    footer p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Language-specific elements */
+    .lang {
+      display: none;
+    }
+    .lang.pl:not(.hidden) {
+      display: inline;
+    }
+    .lang.sk:not(.hidden) {
+      display: inline;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .logo img {
+        width: 200px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Logo mniejsze */
+      .logo img {
+        width: 280px;
+      }
+
+      /* Pokaż hamburgera, ukryj domyślnie menu */
+      .menu-toggle {
+        display: flex;
+      }
+      nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        width: 80vw;
+        max-width: 280px;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      nav ul.open {
+        max-height: 500px; /* wystarczająco duże, by pokazać wszystkie linki */
+      }
+      nav ul li {
+        border-bottom: 1px solid #eee;
+      }
+      nav ul li a {
+        display: block;
+        padding: 12px 20px;
+      }
+      .header-right {
+        flex-direction: row-reverse;
+      }
+
+      .hero {
+        height: 50vh;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .contact-container {
+        flex-direction: column;
+      }
+      nav ul {
+        gap: 0;
+      }
+      .header-right {
+        gap: 10px;
+      }
+      .section-title {
+        font-size: 1.75rem;
+      }
+      .service-content h3 {
+        font-size: 1.1rem;
+      }
+      .service-content p {
+        font-size: 0.9rem;
+      }
+      .contact-info, .contact-form {
+        padding: 15px;
+      }
+      .contact-info h4 {
+        font-size: 1.1rem;
+      }
+      .contact-info p, .contact-info a,
+      .contact-form form label,
+      .contact-form form input,
+      .contact-form form textarea {
+        font-size: 0.9rem;
+      }
+      footer p {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        width: 140px;
+      }
+      .hero-content h1 {
+        font-size: 1.75rem;
+      }
+      .hero-content p {
+        font-size: 0.9rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .services-grid {
+        gap: 20px;
+      }
+      .service-content h3 {
+        font-size: 1rem;
+      }
+      .service-content p {
+        font-size: 0.85rem;
+      }
+      .contact-info, .contact-form {
+        width: 100%;
+      }
+    }
+	.gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      width: 100%;
+      max-width: 1400px;
+	  margin: 0 auto;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content .description {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #ff5c5c;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .arrow.left { left: 1rem; }
+    .arrow.right { right: 1rem; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+	
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="baner.png" alt="Logo Sykowni Chłopcy">
+      </div>
+
+      <!-- Przycisk hamburgera (tylko na telefonach)
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>-->
+
+      <nav>
+        <ul id="nav-list">
+          <li>
+            <a href="#hero" class="lang pl">Strona Główna</a>
+            <a href="#hero" class="lang sk hidden">Domov</a>
+          </li>
+          <li>
+            <a href="#services" class="lang pl">Usługi</a>
+            <a href="#services" class="lang sk hidden">Služby</a>
+          </li>
+          <li>
+            <a href="#gallery" class="lang pl">Galeria</a>
+            <a href="#gallery" class="lang sk hidden">Galéria</a>
+          </li>
+          <li>
+            <a href="#contact" class="lang pl">Kontakt</a>
+            <a href="#contact" class="lang sk hidden">Kontakt</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang-switch">
+          <button id="btn-pl" class="active" onclick="setLanguage('pl')">PL</button>
+          <button id="btn-sk" onclick="setLanguage('sk')">SK</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="lang pl">Profesjonalne Prace Budowlane</h1>
+      <h1 class="lang sk hidden">Profesionálne Stavebné Práce</h1></br>
+      <p class="lang pl">Ocieplenia • Obróbki Blacharskie • Montaż Parapetów i Rynien • Podbitki • Tynk Zewnętrzny</p>
+      <p class="lang sk hidden">Zateplenie • Plechárske Práce • Montáž Parapetov a Odkvapov • Podbitie • Exteriérová Omietka</p>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about" class="section" style="background-color: #f5f5f5;">
+  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+    <h2 class="section-title">
+      <span class="lang pl">O nas</span>
+      <span class="lang sk hidden">O nás</span>
+    </h2>
+	<p class="lang pl">Jesteśmy młodą, dynamicznie rozwijającą się firmą, która stawia na jakość i zadowolenie klienta.
+      Oferujemy konkurencyjne ceny, indywidualne podejście do każdego zlecenia oraz szybką i profesjonalną realizację prac.
+      Dzięki elastyczności i zaangażowaniu zapewniamy krótkie terminy wykonania, nie rezygnując przy tym z wysokiego standardu usług.</p>
+          <p class="lang sk hidden">Sme mladá, dynamicky sa rozvíjajúca firma, ktorá kladie dôraz na kvalitu a spokojnosť zákazníka.
+		  Ponúkame konkurenčné ceny, individuálny prístup ku každému projektu a rýchlu a profesionálnu realizáciu prác.
+		  Vďaka flexibilite a nasadeniu zabezpečujeme krátke dodacie lehoty bez toho, aby sme ustúpili z vysokého štandardu služieb.</p>
+  </div>
+</section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <h2 class="section-title">
+      <span class="lang pl">Nasze Usługi</span>
+      <span class="lang sk hidden">Naše Služby</span>
+    </h2>
+    <div class="services-grid">
+      <!-- Ocieplenia -->
+      <div class="service-card">
+        <img src="ocieplenia.jpg" alt="Ocieplenia">
+        <div class="service-content">
+          <h3 class="lang pl">Ocieplenia</h3>
+          <h3 class="lang sk hidden">Zateplenie Budov</h3>
+		  </br>
+          <p class="lang pl">Wykonujemy nowoczesne ocieplenia budynków jednorodzinnych i wielorodzinnych z gwarancją najwyższej jakości izolacji.</p>
+          <p class="lang sk hidden">Vykonávame moderné zateplenie rodinných a bytových domov s garantovanou kvalitou izolácie.</p>
+        </div>
+      </div>
+	  <!-- Tynk Zewnętrzny -->
+      <div class="service-card">
+        <img src="tynk.jpg" alt="Tynk Zewnętrzny">
+        <div class="service-content">
+          <h3 class="lang pl">Tynk Zewnętrzny</h3>
+          <h3 class="lang sk hidden">Exteriérová Omietka</h3>
+          <p class="lang pl">Nakładamy tynki zewnętrzne, które zabezpieczają mury i nadają nowoczesny wygląd każdej elewacji.</p>
+          <p class="lang sk hidden">Nanášame exteriérové omietky, ktoré chránia steny a dodávajú moderný vzhľad každej fasáde.</p>
+        </div>
+      </div>
+      <!-- Obróbki Blacharskie -->
+      <div class="service-card">
+        <img src="cos.jpg" alt="Obróbki Blacharskie">
+        <div class="service-content">
+          <h3 class="lang pl">Obróbki Blacharskie</h3>
+          <h3 class="lang sk hidden">Plechárske Práce</h3>
+          <p class="lang pl">Profesjonalne obróbki dachów i elementów budynku. Zabezpieczamy przed wilgocią i wydłużamy żywotność konstrukcji.</p>
+          <p class="lang sk hidden">Profesionálne plechárske práce strechy a prvkov budovy. Chránime pred vlhkosťou a predlžujeme životnosť konštrukcie.</p>
+        </div>
+      </div>
+      <!-- Montaż Parapetów i Rynien -->
+      <div class="service-card">
+        <img src="rynny.jpg" alt="Montaż Parapetów i Rynien">
+        <div class="service-content">
+          <h3 class="lang pl">Montaż Parapetów i Rynien</h3>
+          <h3 class="lang sk hidden">Montáž Parapetov a Odkvapov</h3>
+          <p class="lang pl">Montaż parapetów zewnętrznych i wewnętrznych oraz systemów rynnowych, zapewniających estetykę i trwałość.</p>
+          <p class="lang sk hidden">Montáž vonkajších a vnútorných parapetov a odkvapových systémov, ktoré zabezpečia estetiku a odolnosť.</p>
+        </div>
+      </div>
+      <!-- Podbitki -->
+      <div class="service-card">
+        <img src="podbitki.jpg" alt="Podbitki">
+        <div class="service-content">
+          <h3 class="lang pl">Podbitki</h3>
+          <h3 class="lang sk hidden">Podbitie Strechy</h3>
+          <p class="lang pl">Wykonujemy podbitki dachów, chroniące elementy drewniane i poprawiające estetykę elewacji.</p>
+          <p class="lang sk hidden">Vykonávame podbitie strechy, ktoré chráni drevené prvky a vylepšuje estetiku fasády.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="galeria" class="section" style="background-color: #f5f5f5;">
+ <h2 class="section-title">
+ </br>
+      <span class="lang pl">Galeria</span>
+      <span class="lang sk hidden">Galeria</span>
+    </h2>
+  <div class="gallery" id="gallery"></div>
+
+  <div class="modal" id="imageModal" onclick="handleOutsideClick(event)">
+    <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <img id="modalImg" src="" alt="Modal Image">
+      <div class="description" id="modalDesc"></div>
+    </div>
+    <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+  </div>
+  </section>
+
+  <script>
+    const images = [
+      { src: 'galery_1.jpg', desc: 'Kolejny domek' },
+      { src: 'galery_2.jpg', desc: 'Domek fajny' },
+	  { src: 'rynny.jpg', desc: 'Domek niefajny' },
+	  { src: 'mian_background.jpg', desc: 'Jakiś domek' }
+    ];
+
+    const gallery = document.getElementById('gallery');
+    images.forEach((img, i) => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.innerHTML = `<img src="${img.src}" alt="img${i}"><div class="caption">${img.desc}</div>`;
+      item.onclick = () => openModal(i);
+      gallery.appendChild(item);
+    });
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      updateModal();
+      document.getElementById('imageModal').classList.add('active');
+    }
+
+    function updateModal() {
+      const img = images[currentIndex];
+      document.getElementById('modalImg').src = img.src;
+      document.getElementById('modalDesc').innerText = img.desc;
+    }
+
+    function changeImage(offset) {
+      currentIndex = (currentIndex + offset + images.length) % images.length;
+      updateModal();
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
+    }
+
+    function handleOutsideClick(event) {
+      if (event.target.id === 'imageModal') closeModal();
+    }
+
+    document.getElementById('imageModal').addEventListener('wheel', e => {
+      if (e.deltaY < 0) changeImage(-1);
+      else changeImage(1);
+    });
+
+    let startX = 0;
+    document.getElementById('imageModal').addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.getElementById('imageModal').addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0) changeImage(1);
+        else changeImage(-1);
+      }
+    });
+  </script>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">
+      <span class="lang pl">Kontakt</span>
+      <span class="lang sk hidden">Kontakt</span>
+    </h2>
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h4 class="lang pl">Dane Kontaktowe</h4>
+        <h4 class="lang sk hidden">Kontaktné Údaje</h4>
+        <p>Tomasz Grygiel</p>
+        <p>Biała Niżna</p>
+        <p>
+          <span class="lang pl">Telefon:</span>
+          <span class="lang sk hidden">Telefón:</span>
+          <a href="tel:+48574977131">+48 574 977 131</a>
+        </p>
+        <p>Email: <a href="mailto:grygieltomek99@gmail.com">grygieltomek99@gmail.com</a></p>
+      </div>
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <h3 class="lang pl">Wycena pracy</h3>
+          <h3 class="lang sk hidden">Cenová ponuka prác</h3>
+          <br><br>
+          <p class="lang pl"><strong>Imię:</strong></p>
+          <p class="lang sk hidden"><strong>Meno:</strong></p>
+          <input type="text" id="name" name="name" required>
+
+          <p class="lang pl"><strong>Telefon:</strong></p>
+          <p class="lang sk hidden"><strong>Telefón:</strong></p>
+          <input type="text" id="phone" name="phone" required>
+
+          <p class="lang pl"><strong>Email:</strong></p>
+          <p class="lang sk hidden"><strong>Email:</strong></p>
+          <input type="email" id="email" name="email" required>
+
+          <button type="submit" class="lang pl">Wyślij</button>
+          <button type="submit" class="lang sk hidden">Odoslať</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> 
+      <span class="lang pl">Sykowni Chłopcy. Wszelkie prawa zastrzeżone.</span>
+      <span class="lang sk hidden">Sykowni Chłopcy. Všetky práva vyhradené.</span>
+    </p>
+  </footer>
+
+  <!-- JavaScript for Hamburger, Language Switching & Footer Year -->
+  <script>
+    // Przełącznik języka
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(el => {
+        el.classList.add('hidden');
+      });
+      document.querySelectorAll('.lang.' + lang).forEach(el => {
+        el.classList.remove('hidden');
+      });
+      document.querySelectorAll('.lang-switch button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById('btn-' + lang).classList.add('active');
+    }
+    setLanguage('pl');
+
+    // Aktualny rok w stopce
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Obsługa menu hamburger
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+      // Prosta animacja ikonki:
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
