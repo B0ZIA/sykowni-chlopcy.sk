@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sykowni-chlopcy.pl/sitemap.xml
+Sitemap: https://sykowni-chlopcy.sk/sitemap.xml

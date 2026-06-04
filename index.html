@@ -1,12 +1,5 @@
-<!-- sk -->
 <!DOCTYPE html>
 <html lang="sk">
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('lang-sk')?.classList.add('active');
-    document.getElementById('lang-pl')?.classList.remove('active');
-  });
-</script>
 <head>
 <script type="application/ld+json">
 {
@@ -23,7 +16,7 @@
   },
   "telephone": "+48 574 977 131",
   "email": "grygieltomek99@gmail.com",
-  "url": "https://sykowni-chlopcy.sk",
+  "url": "https://sykowni-chlopcy.sk/",
   "priceRange": "$" 
 }
 </script>
@@ -35,9 +28,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://sykowni-chlopcy.sk" />
-  <link rel="alternate" hreflang="pl" href="https://sykowni-chlopcy.pl" />
-  <link rel="alternate" hreflang="sk" href="https://sykowni-chlopcy.sk" />
+  <link rel="canonical" href="https://sykowni-chlopcy.sk/" />
+  <link rel="alternate" hreflang="pl" href="https://sykowni-chlopcy.pl/" />
+  <link rel="alternate" hreflang="sk" href="https://sykowni-chlopcy.sk/" />
   <meta name="description" content="Profesionálne stavebné služby v Poľsku a na Slovensku. Zateplenie, omietky, podhľady, klampiarske práce, parapety, odkvapy a viac." />
 </head>
 <body>
@@ -48,15 +41,14 @@
       <img src="banner_new.png" alt="Sykowni Chłopcy Logo" class="hero-logo" style="cursor: pointer;" onclick="scrollToTop()" />
     </div>
     <ul class="nav-center nav-links">
-      <!-- <li><a href="#about">O nás</a></li> -->
       <li><a href="#services">Služby</a></li>
       <li><a href="#gallery">Galéria</a></li>
       <li><a href="#contact-section">Kontakt</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-switch">
-	    <a href="https://sykowni-chlopcy.pl"><button id="lang-pl" type="button">PL</button></a>
-        <a href="https://sykowni-chlopcy.sk"><button id="lang-sk" type="button">SK</button></a>
+        <a href="https://sykowni-chlopcy.pl/"><button type="button">PL</button></a>
+        <a href="https://sykowni-chlopcy.sk/"><button class="active" type="button">SK</button></a>
       </div>
       <div class="hamburger">
         <span></span><span></span><span></span>
@@ -69,47 +61,11 @@
   </div>
 </header>
 
-<!-- <section id="about" data-aos="fade-up"> -->
-  <!-- <h2>O nás</h2> -->
-  <!-- <p> -->
-    <!-- Sme stavebná firma s dlhoročnými skúsenosťami. Ponúkame široký rozsah služieb a zaručujeme vysokú kvalitu práce modernými metódami. Náš tím tvoria kvalifikovaní špecialisti, ktorí sa snažia naplniť očakávania zákazníkov. -->
-  <!-- </p> -->
-  <!-- <div class="about-wrapper"> -->
-    <!-- <div class="about-block" data-aos="fade-right"> -->
-      <!-- <div class="about-icon"><i class="fas fa-hard-hat"></i></div> -->
-      <!-- <div class="about-text"> -->
-        <!-- <h3>Skúsenosti</h3> -->
-        <!-- <p> -->
-          <!-- V stavebníctve pôsobíme roky a poskytujeme spoľahlivé a overené riešenia. -->
-        <!-- </p> -->
-      <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="about-block" data-aos="fade-left"> -->
-      <!-- <div class="about-icon"><i class="fas fa-tools"></i></div> -->
-      <!-- <div class="about-text"> -->
-        <!-- <h3>Moderné technológie</h3> -->
-        <!-- <p> -->
-          <!-- Používame inovatívne technológie, ktoré zabezpečujú trvácnosť a estetiku. -->
-        <!-- </p> -->
-      <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="about-block" data-aos="fade-right"> -->
-      <!-- <div class="about-icon"><i class="fas fa-handshake"></i></div> -->
-      <!-- <div class="about-text"> -->
-        <!-- <h3>Dôvera a prístup</h3> -->
-        <!-- <p> -->
-          <!-- Najdôležitejšia je pre nás spokojnosť zákazníka a partnerský prístup. -->
-        <!-- </p> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
-<!-- </section> -->
-
 <section id="services" data-aos="fade-up">
   <h2>Naše služby</h2>
   <div class="services-grid">
     <div class="service-item" data-aos="fade-up">
-	  <i class="fas fa-thermometer-half"></i>
+      <i class="fas fa-thermometer-half"></i>
       <h3>Zateplenie Budov</h3>
       <p>
         Vykonávame moderné zateplenie rodinných a bytových domov s garantovanou kvalitou izolácie.
@@ -153,11 +109,11 @@
       <img src="modern_6.jpg" alt="Przed 1" class="gallery-thumb" />
       <img src="background.jpg" alt="Po 1" class="gallery-thumb" />
     </div>
-	<div class="gallery-pair" data-index="1">
+    <div class="gallery-pair" data-index="1">
       <img src="modern_7.jpg" alt="Przed 1" class="gallery-thumb" />
       <img src="modern_5.jpg" alt="Po 1" class="gallery-thumb" />
     </div>
-	<div class="gallery-pair" data-index="2">
+    <div class="gallery-pair" data-index="2">
       <img src="modern_8.jpg" alt="Przed 1" class="gallery-thumb" />
       <img src="modern_2.jpg" alt="Po 1" class="gallery-thumb" />
     </div>
@@ -165,11 +121,11 @@
       <img src="galery_9.jpg" alt="Przed 2" class="gallery-thumb" />
       <img src="galery_2.jpg" alt="Po 2" class="gallery-thumb" />
     </div>
-	<div class="gallery-pair" data-index="4">
+    <div class="gallery-pair" data-index="4">
       <img src="galery_11.jpg" alt="Przed 2" class="gallery-thumb" />
       <img src="galery_1.jpg" alt="Po 2" class="gallery-thumb" />
     </div>
-	<div class="gallery-pair" data-index="5">
+    <div class="gallery-pair" data-index="5">
       <img src="galery_3.jpg" alt="Przed 2" class="gallery-thumb" />
       <img src="galery_12.jpg" alt="Po 2" class="gallery-thumb" />
     </div>
@@ -199,36 +155,29 @@
   </p>
 
   <div class="contact-wrapper">
-    <!-- Ľavý blok: formulár -->
     <div class="contact-box" data-aos="fade-right">
       <h3 class="contact-header">Požiadaj o cenovú ponuku</h3>
       <form id="contact-form" action="https://formspree.io/f/xgvyvrle" method="POST">
         <input type="hidden" name="_subject" value="Sykowni Chłopcy - správa z formulára">
-
         <div class="form-group" data-aos="fade-up" data-aos-delay="0">
           <label for="name">Meno:</label>
           <input type="text" id="name" name="name" placeholder="Meno" required />
         </div>
-
         <div class="form-group" data-aos="fade-up" data-aos-delay="100">
           <label for="email">E-mail:</label>
           <input type="email" id="email" name="email" placeholder="E-mail" required />
         </div>
-
         <div class="form-group" data-aos="fade-up" data-aos-delay="200">
           <label for="message">Správa:</label>
           <textarea id="message" name="message" placeholder="Správa" rows="5" required></textarea>
         </div>
-
         <div data-aos="zoom-in" data-aos-delay="300">
           <button type="submit" class="btn animated-submit">Odoslať</button>
         </div>
-
         <p id="form-message" class="form-message"></p>
       </form>
     </div>
 
-    <!-- Pravý blok: kontaktné údaje -->
     <div class="contact-box contact-info" data-aos="fade-left">
       <h3 class="contact-header">Kontakt</h3>
       <div class="info-item" data-aos="fade-up">
@@ -250,11 +199,10 @@
 <footer class="footer">
   <div class="footer-container">
     <p class="footer-name">Sykowni Chłopcy</p>
-    <p class="footer-copy">&copy; 2025 Sykowni Chłopcy. Všetky práva vyhradené.</p>
+    <p class="footer-copy">&copy; 2026 Sykowni Chłopcy. Všetky práva vyhradené.</p>
   </div>
 </footer>
 
-<!-- Lightbox dla pary zdjęć -->
 <div id="lightbox-overlay">
   <span id="lightbox-close">&times;</span>
   <div class="lightbox-content">
