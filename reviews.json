@@ -1,24 +1,13 @@
 {
   "name": "Sykowni Chłopcy",
   "rating": 5,
-  "ratingCount": 4,
+  "ratingCount": 6,
   "profileUrl": "https://maps.google.com/?cid=18325216394418417962&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
   "reviews": [
     {
-      "author": "Jakub Główczyk",
-      "initials": "JG",
-      "color": "#1A73E8",
-      "photo": "https://lh3.googleusercontent.com/a-/ALV-UjX7DzB-NdzzQIaiJuuD6etg2IKAKI0I6Xuq4wshI32N634EZC6E=s128-c0x00000000-cc-rp-mo",
-      "profileUrl": "https://www.google.com/maps/contrib/116008056844285541001/reviews",
-      "rating": 5,
-      "relativeTime": "za posledný týždeň",
-      "publishTime": "2026-08-05T20:16:36.244709693Z",
-      "text": "Polecam"
-    },
-    {
       "author": "Marek Bafia",
       "initials": "MB",
-      "color": "#A142F4",
+      "color": "#1A73E8",
       "photo": "https://lh3.googleusercontent.com/a-/ALV-UjWI85nAC5oQc_r6u_YyiTDduHZ62hQdvDLxe-M5yZKkaT26tYQ2og=s128-c0x00000000-cc-rp-mo",
       "profileUrl": "https://www.google.com/maps/contrib/103231439204339304108/reviews",
       "rating": 5,
