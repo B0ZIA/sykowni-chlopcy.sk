@@ -3,89 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sykowni Chłopcy – Zatepľovanie, fasády a stavebné práce | Grybów</title>
-  <meta name="description" content="Zatepľovanie budov, vonkajšie omietky, podhľady, klampiarske práce, parapety a odkvapy. Vlastné vybavenie, komplexná správa materiálov, záruka a bezplatná cenová ponuka s dojazdom. Grybów, Malopoľsko a Slovensko." />
+  <title>Zatepľovanie a fasády – Prešov, Poprad, Košice | Sykowni Chłopcy</title>
+  <meta name="description" content="Zatepľovanie budov, vonkajšie omietky, strešné podhľady, klampiarske práce, parapety a odkvapy. Vlastné lešenie, kompletný servis materiálov, záruka a bezplatná cenová ponuka s dojazdom. Prešov, Poprad, Košice, Bardejov a Malopoľsko." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="Tomasz Grygiel SYKOWNI-CHLOPCY" />
   <meta name="theme-color" content="#0B1F3A" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="canonical" href="https://sykowni-chlopcy.sk/" />
-  <link rel="alternate" hreflang="pl" href="https://sykowni-chlopcy.pl/" />
   <link rel="alternate" hreflang="sk" href="https://sykowni-chlopcy.sk/" />
+  <link rel="alternate" hreflang="pl" href="https://sykowni-chlopcy.pl/" />
+  <link rel="alternate" hreflang="x-default" href="https://sykowni-chlopcy.pl/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sk_SK" />
+  <meta property="og:locale:alternate" content="pl_PL" />
   <meta property="og:site_name" content="Sykowni Chłopcy" />
-  <meta property="og:title" content="Sykowni Chłopcy – Zatepľovanie, fasády a stavebné práce" />
-  <meta property="og:description" content="Vlastné vybavenie, komplexná správa materiálov, záruka a bezplatná cenová ponuka s dojazdom na miesto." />
-  <meta property="og:image" content="https://sykowni-chlopcy.sk/modern_1.jpg" />
+  <meta property="og:title" content="Zatepľovanie a fasády, ktoré sa robia raz | Sykowni Chłopcy" />
+  <meta property="og:description" content="Zatepľovanie, omietky a fasády na Slovensku aj v Poľsku. Vlastné lešenie, materiál až k domu, záruka a bezplatná cenová ponuka s dojazdom na miesto." />
+  <meta property="og:image" content="https://sykowni-chlopcy.sk/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Sykowni Chłopcy – dom po zateplení a dokončenej fasáde" />
   <meta property="og:url" content="https://sykowni-chlopcy.sk/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zatepľovanie a fasády, ktoré sa robia raz | Sykowni Chłopcy" />
+  <meta name="twitter:description" content="Zatepľovanie, omietky a fasády na Slovensku aj v Poľsku. Bezplatná cenová ponuka s dojazdom na miesto." />
+  <meta name="twitter:image" content="https://sykowni-chlopcy.sk/og-image.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="style.css?v=16" />
+  <!-- písma stoja na našom serveri, takže sa oplatí siahnuť po nich hneď -->
+  <link rel="preload" href="fonts/jakarta-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- pozadie hero je najväčší prvok prvej obrazovky (LCP);
+       telefón dostáva ľahší variant, aj tak ho prekrýva tmavá vrstva -->
+  <link rel="preload" href="modern_5-800.webp" as="image" type="image/webp" media="(max-width: 700px)" fetchpriority="high" />
+  <link rel="preload" href="modern_1.webp" as="image" type="image/webp" media="(min-width: 701px)" fetchpriority="high" />
+
+  <!-- trieda .js zapína animácie príchodu; bez skriptov obsah zostáva viditeľný -->
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="style.css?v=54" />
+  <script src="script.js?v=54" defer></script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "name": "Sykowni Chłopcy",
-    "image": "https://sykowni-chlopcy.sk/banner_new.png",
-    "description": "Zatepľovanie budov, vonkajšie omietky, strešné podhľady, klampiarske práce, parapety a odkvapy. Stavebné služby v Poľsku a na Slovensku.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Grybów",
-      "postalCode": "33-330",
-      "addressCountry": "PL"
-    },
-    "telephone": "+421 952 570 317",
-    "email": "grygieltomek99@gmail.com",
-    "url": "https://sykowni-chlopcy.sk/",
-    "priceRange": "$$",
-    "areaServed": ["Malopoľsko", "Nowy Sącz", "Grybów", "Prešov", "Poprad", "Košice", "Bardejov"],
-    "foundingDate": "2024",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Stavebné služby",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Zatepľovanie budov" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vonkajšia omietka" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Klampiarske práce" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parapety a odkvapy" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strešný podhľad" } }
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://sykowni-chlopcy.sk/#firma",
+        "name": "Sykowni Chłopcy",
+        "legalName": "Tomasz Grygiel SYKOWNI-CHLOPCY",
+        "vatID": "PL7343620881",
+        "taxID": "7343620881",
+        "description": "Zatepľovanie budov, vonkajšie omietky, strešné podhľady, klampiarske práce, parapety a odkvapy. Stavebné služby na Slovensku a v Poľsku.",
+        "url": "https://sykowni-chlopcy.sk/",
+        "telephone": "+421952570317",
+        "email": "schlopcy@gmail.com",
+        "foundingDate": "2024",
+        "priceRange": "$$",
+        "currenciesAccepted": "EUR, PLN",
+        "paymentAccepted": "Hotovosť, prevod",
+        "knowsLanguage": ["sk", "pl"],
+        "image": "https://sykowni-chlopcy.sk/og-image.jpg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sykowni-chlopcy.sk/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "hasMap": "https://maps.app.goo.gl/REYcrivsohncNmFw8",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Biała Wyżna 380",
+          "addressLocality": "Grybów",
+          "addressRegion": "małopolskie",
+          "postalCode": "33-330",
+          "addressCountry": "PL"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Prešov" },
+          { "@type": "City", "name": "Poprad" },
+          { "@type": "City", "name": "Košice" },
+          { "@type": "City", "name": "Bardejov" },
+          { "@type": "AdministrativeArea", "name": "Prešovský kraj" },
+          { "@type": "AdministrativeArea", "name": "Košický kraj" },
+          { "@type": "AdministrativeArea", "name": "Malopoľsko" },
+          { "@type": "City", "name": "Grybów" },
+          { "@type": "City", "name": "Nowy Sącz" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Stavebné služby",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Zatepľovanie budov", "description": "Zatepľovanie rodinných a bytových domov v systéme ETICS – polystyrén alebo minerálna vlna." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vonkajšia omietka", "description": "Fasádne omietky silikónové, akrylátové a mozaikové." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Klampiarske práce", "description": "Oplechovanie strechy, komínov a atík." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parapety a odkvapy", "description": "Montáž vonkajších a vnútorných parapetov a odkvapových systémov." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strešný podhľad", "description": "Podhľady z PVC, dreva a plechu, ktoré chránia konštrukciu strechy." } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sykowni-chlopcy.sk/#stranka",
+        "url": "https://sykowni-chlopcy.sk/",
+        "name": "Sykowni Chłopcy",
+        "inLanguage": "sk-SK",
+        "publisher": { "@id": "https://sykowni-chlopcy.sk/#firma" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://sykowni-chlopcy.sk/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "V akej oblasti pracujete?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Na Slovensku realizujeme zákazky v regióne Prešova, Popradu, Košíc a Bardejova. Na poľskej strane pôsobíme v celom Malopoľsku, najmä v okolí Grybówa a Nowého Sącza. Do úvahy prichádzajú aj vzdialenejšie výjazdy – stačí sa opýtať." }
+          },
+          {
+            "@type": "Question",
+            "name": "Pomáhate pri výbere farby a typu omietky?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Áno. Poradíme, aká štruktúra a farebnosť sa hodí k danej budove a ktoré riešenia sú v našom podnebí trvácnejšie. Rozhodnutie je vždy na zákazníkovi." }
+          },
+          {
+            "@type": "Question",
+            "name": "Poskytujete záruku na vykonané práce?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Áno. Na nami vykonané práce poskytujeme záruku – podrobnosti a rozsah dohodneme individuálne pri dojednávaní zákazky." }
+          },
+          {
+            "@type": "Question",
+            "name": "Čo sa deje s parapetmi, odkvapmi a lampami pri zatepľovaní?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pred začatím prác ich demontujeme a po zateplení znova namontujeme, so zohľadnením novej hrúbky steny. Ak je niečo na výmenu, povieme to vo fáze cenovej ponuky, nie počas prác." }
+          },
+          {
+            "@type": "Question",
+            "name": "Ako prebieha vyúčtovanie?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Rozsah, cenu a harmonogram platieb dohodneme pred nástupom na stavbu a preberieme pri predložení cenovej ponuky. Náklady sa počas prác nenabaľujú." }
+          },
+          {
+            "@type": "Question",
+            "name": "Koľko stojí cenová ponuka a chodíte na obhliadku?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Cenová ponuka vrátane dojazdu a zamerania na mieste je bezplatná a k ničomu nezaväzuje." }
+          },
+          {
+            "@type": "Question",
+            "name": "Môžem si pozrieť viac vašich realizácií?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Časť fotografií pred a po nájdete v galérii realizácií na stránke. Ďalšie fotky podobných budov posielame na požiadanie po telefonickom kontakte." }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
 <body id="top">
+
+<!-- Sada ikon: Font Awesome Free 5.15.4 (CC BY 4.0), vybrané len tie,
+     ktoré stránka naozaj používa. Vložené priamo v HTML, aby boli ikony
+     viditeľné od prvej snímky a bez dopytu na cudzí server. -->
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-images" viewBox="0 0 576 512"><path d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v208c0 44.112 35.888 80 80 80h336zm96-80V80c0-26.51-21.49-48-48-48H144c-26.51 0-48 21.49-48 48v256c0 26.51 21.49 48 48 48h384c26.51 0 48-21.49 48-48zM256 128c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-96 144l55.515-55.515c4.686-4.686 12.284-4.686 16.971 0L272 256l135.515-135.515c4.686-4.686 12.284-4.686 16.971 0L512 208v112H160v-48z"/></symbol>
+  <symbol id="i-search-plus" viewBox="0 0 512 512"><path d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></symbol>
+  <symbol id="i-phone-alt" viewBox="0 0 512 512"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"/></symbol>
+  <symbol id="i-map-marker-alt" viewBox="0 0 384 512"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></symbol>
+  <symbol id="i-envelope" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></symbol>
+  <symbol id="i-vector-square" viewBox="0 0 512 512"><path d="M512 128V32c0-17.67-14.33-32-32-32h-96c-17.67 0-32 14.33-32 32H160c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v96c0 17.67 14.33 32 32 32v192c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32h192c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-96c0-17.67-14.33-32-32-32V160c17.67 0 32-14.33 32-32zm-96-64h32v32h-32V64zM64 64h32v32H64V64zm32 384H64v-32h32v32zm352 0h-32v-32h32v32zm-32-96h-32c-17.67 0-32 14.33-32 32v32H160v-32c0-17.67-14.33-32-32-32H96V160h32c17.67 0 32-14.33 32-32V96h192v32c0 17.67 14.33 32 32 32h32v192z"/></symbol>
+  <symbol id="i-shield-alt" viewBox="0 0 512 512"><path d="M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM256.1 446.3l-.1-381 175.9 73.3c-3.3 151.4-82.1 261.1-175.8 307.7z"/></symbol>
+  <symbol id="i-ruler-combined" viewBox="0 0 512 512"><path d="M160 288h-56c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h56v-64h-56c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h56V96h-56c-4.42 0-8-3.58-8-8V72c0-4.42 3.58-8 8-8h56V32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v448c0 2.77.91 5.24 1.57 7.8L160 329.38V288zm320 64h-32v56c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-56h-64v56c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-56h-64v56c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-56h-41.37L24.2 510.43c2.56.66 5.04 1.57 7.8 1.57h448c17.67 0 32-14.33 32-32v-96c0-17.67-14.33-32-32-32z"/></symbol>
+  <symbol id="i-globe-europe" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm200 248c0 22.5-3.9 44.2-10.8 64.4h-20.3c-4.3 0-8.4-1.7-11.4-4.8l-32-32.6c-4.5-4.6-4.5-12.1.1-16.7l12.5-12.5v-8.7c0-3-1.2-5.9-3.3-8l-9.4-9.4c-2.1-2.1-5-3.3-8-3.3h-16c-6.2 0-11.3-5.1-11.3-11.3 0-3 1.2-5.9 3.3-8l9.4-9.4c2.1-2.1 5-3.3 8-3.3h32c6.2 0 11.3-5.1 11.3-11.3v-9.4c0-6.2-5.1-11.3-11.3-11.3h-36.7c-8.8 0-16 7.2-16 16v4.5c0 6.9-4.4 13-10.9 15.2l-31.6 10.5c-3.3 1.1-5.5 4.1-5.5 7.6v2.2c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8s-3.6-8-8-8H247c-3 0-5.8 1.7-7.2 4.4l-9.4 18.7c-2.7 5.4-8.2 8.8-14.3 8.8H194c-8.8 0-16-7.2-16-16V199c0-4.2 1.7-8.3 4.7-11.3l20.1-20.1c4.6-4.6 7.2-10.9 7.2-17.5 0-3.4 2.2-6.5 5.5-7.6l40-13.3c1.7-.6 3.2-1.5 4.4-2.7l26.8-26.8c2.1-2.1 3.3-5 3.3-8 0-6.2-5.1-11.3-11.3-11.3H258l-16 16v8c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8v-20c0-2.5 1.2-4.9 3.2-6.4l28.9-21.7c1.9-.1 3.8-.3 5.7-.3C358.3 56 448 145.7 448 256zM130.1 149.1c0-3 1.2-5.9 3.3-8l25.4-25.4c2.1-2.1 5-3.3 8-3.3 6.2 0 11.3 5.1 11.3 11.3v16c0 3-1.2 5.9-3.3 8l-9.4 9.4c-2.1 2.1-5 3.3-8 3.3h-16c-6.2 0-11.3-5.1-11.3-11.3zm128 306.4v-7.1c0-8.8-7.2-16-16-16h-20.2c-10.8 0-26.7-5.3-35.4-11.8l-22.2-16.7c-11.5-8.6-18.2-22.1-18.2-36.4v-23.9c0-16 8.4-30.8 22.1-39l42.9-25.7c7.1-4.2 15.2-6.5 23.4-6.5h31.2c10.9 0 21.4 3.9 29.6 10.9l43.2 37.1h18.3c8.5 0 16.6 3.4 22.6 9.4l17.3 17.3c3.4 3.4 8.1 5.3 12.9 5.3H423c-32.4 58.9-93.8 99.5-164.9 103.1z"/></symbol>
+  <symbol id="i-cubes" viewBox="0 0 512 512"><path d="M488.6 250.2L392 214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3 0l-100 37.5c-14.1 5.3-23.4 18.7-23.4 33.7V214l-96.6 36.2C9.3 255.5 0 268.9 0 283.9V394c0 13.6 7.7 26.1 19.9 32.2l100 50c10.1 5.1 22.1 5.1 32.2 0l103.9-52 103.9 52c10.1 5.1 22.1 5.1 32.2 0l100-50c12.2-6.1 19.9-18.6 19.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358 214.8l-85 31.9v-68.2l85-37v73.3zM154 104.1l102-38.2 102 38.2v.6l-102 41.4-102-41.4v-.6zm84 291.1l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6zm240 112l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 512 512"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"/></symbol>
+  <symbol id="i-broom" viewBox="0 0 640 512"><path d="M256.47 216.77l86.73 109.18s-16.6 102.36-76.57 150.12C206.66 523.85 0 510.19 0 510.19s3.8-23.14 11-55.43l94.62-112.17c3.97-4.7-.87-11.62-6.65-9.5l-60.4 22.09c14.44-41.66 32.72-80.04 54.6-97.47 59.97-47.76 163.3-40.94 163.3-40.94zM636.53 31.03l-19.86-25c-5.49-6.9-15.52-8.05-22.41-2.56l-232.48 177.8-34.14-42.97c-5.09-6.41-15.14-5.21-18.59 2.21l-25.33 54.55 86.73 109.18 58.8-12.45c8-1.69 11.42-11.2 6.34-17.6l-34.09-42.92 232.48-177.8c6.89-5.48 8.04-15.53 2.55-22.44z"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 640 512"><path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"/></symbol>
+  <symbol id="i-tools" viewBox="0 0 512 512"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"/></symbol>
+  <symbol id="i-times" viewBox="0 0 352 512"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></symbol>
+  <symbol id="i-thermometer-half" viewBox="0 0 256 512"><path d="M192 384c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-23.685 12.876-44.349 32-55.417V224c0-17.673 14.327-32 32-32s32 14.327 32 32v104.583c19.124 11.068 32 31.732 32 55.417zm32-84.653c19.912 22.563 32 52.194 32 84.653 0 70.696-57.303 128-128 128-.299 0-.609-.001-.909-.003C56.789 511.509-.357 453.636.002 383.333.166 351.135 12.225 321.755 32 299.347V96c0-53.019 42.981-96 96-96s96 42.981 96 96v203.347zM208 384c0-34.339-19.37-52.19-32-66.502V96c0-26.467-21.533-48-48-48S80 69.533 80 96v221.498c-12.732 14.428-31.825 32.1-31.999 66.08-.224 43.876 35.563 80.116 79.423 80.42L128 464c44.112 0 80-35.888 80-80z"/></symbol>
+  <symbol id="i-question" viewBox="0 0 384 512"><path d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"/></symbol>
+  <symbol id="i-paper-plane" viewBox="0 0 512 512"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></symbol>
+  <symbol id="i-paint-roller" viewBox="0 0 512 512"><path d="M416 128V32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v96c0 17.67 14.33 32 32 32h352c17.67 0 32-14.33 32-32zm32-64v128c0 17.67-14.33 32-32 32H256c-35.35 0-64 28.65-64 64v32c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32v-32h160c53.02 0 96-42.98 96-96v-64c0-35.35-28.65-64-64-64z"/></symbol>
+  <symbol id="i-layer-group" viewBox="0 0 512 512"><path d="M12.41 148.02l232.94 105.67c6.8 3.09 14.49 3.09 21.29 0l232.94-105.67c16.55-7.51 16.55-32.52 0-40.03L266.65 2.31a25.607 25.607 0 0 0-21.29 0L12.41 107.98c-16.55 7.51-16.55 32.53 0 40.04zm487.18 88.28l-58.09-26.33-161.64 73.27c-7.56 3.43-15.59 5.17-23.86 5.17s-16.29-1.74-23.86-5.17L70.51 209.97l-58.1 26.33c-16.55 7.5-16.55 32.5 0 40l232.94 105.59c6.8 3.08 14.49 3.08 21.29 0L499.59 276.3c16.55-7.5 16.55-32.5 0-40zm0 127.8l-57.87-26.23-161.86 73.37c-7.56 3.43-15.59 5.17-23.86 5.17s-16.29-1.74-23.86-5.17L70.29 337.87 12.41 364.1c-16.55 7.5-16.55 32.5 0 40l232.94 105.59c6.8 3.08 14.49 3.08 21.29 0L499.59 404.1c16.55-7.5 16.55-32.5 0-40z"/></symbol>
+  <symbol id="i-hard-hat" viewBox="0 0 512 512"><path d="M480 288c0-80.25-49.28-148.92-119.19-177.62L320 192V80a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v112l-40.81-81.62C81.28 139.08 32 207.75 32 288v64h448zm16 96H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h480a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"/></symbol>
+  <symbol id="i-hammer" viewBox="0 0 576 512"><path d="M571.31 193.94l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31-28.9-28.9c5.63-21.31.36-44.9-16.35-61.61l-45.25-45.25c-62.48-62.48-163.79-62.48-226.28 0l90.51 45.25v18.75c0 16.97 6.74 33.25 18.75 45.25l49.14 49.14c16.71 16.71 40.3 21.98 61.61 16.35l28.9 28.9-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l90.51-90.51c6.23-6.24 6.23-16.37-.02-22.62zm-286.72-15.2c-3.7-3.7-6.84-7.79-9.85-11.95L19.64 404.96c-25.57 23.88-26.26 64.19-1.53 88.93s65.05 24.05 88.93-1.53l238.13-255.07c-3.96-2.91-7.9-5.87-11.44-9.41l-49.14-49.14z"/></symbol>
+  <symbol id="i-external-link-alt" viewBox="0 0 512 512"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/></symbol>
+  <symbol id="i-columns" viewBox="0 0 512 512"><path d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64V160h160v256zm224 0H288V160h160v256z"/></symbol>
+  <symbol id="i-chevron-up" viewBox="0 0 448 512"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></symbol>
+  <symbol id="i-clock-o" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></symbol>
+  <symbol id="i-star-o" viewBox="0 0 576 512"><path d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"/></symbol>
+</svg>
 
 <a class="skip-link" href="#main">Prejsť na obsah</a>
 
 <nav class="navbar" id="navbar">
   <div class="wrap nav-container">
     <a href="#top" class="nav-logo" aria-label="Sykowni Chłopcy – domovská stránka">
-      <img src="banner_new.png" alt="Sykowni Chłopcy" class="hero-logo" />
+      <img src="banner_new.png" alt="Sykowni Chłopcy" class="hero-logo" width="607" height="180" />
     </a>
 
     <ul class="nav-center nav-links" id="nav-links">
-      <li><a href="#about">O spoločnosti</a></li>
+      <li><a href="#about">O firme</a></li>
       <li><a href="#services">Služby</a></li>
       <li><a href="#process">Ako pracujeme</a></li>
       <li><a href="#gallery">Realizácie</a></li>
+      <li class="js-reviews-link" hidden><a href="#reviews">Hodnotenia</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact-section">Kontakt</a></li>
+      <li class="nav-cta-mobile"><a href="tel:+421952570317">+421 952 570 317</a></li>
     </ul>
 
     <div class="nav-right">
-      <div class="lang-switch" role="group" aria-label="Výber jazyka">
-        <a href="https://sykowni-chlopcy.pl/" class="lang-btn">PL</a>
-        <a href="https://sykowni-chlopcy.sk/" class="lang-btn is-active">SK</a>
+      <div class="lang-select">
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu">
+          <i class="ico" aria-hidden="true"><svg><use href="#i-globe-europe"></use></svg></i>
+          <span class="lang-current">SK</span>
+          <i class="ico lang-caret" aria-hidden="true"><svg><use href="#i-chevron-down"></use></svg></i>
+        </button>
+        <ul class="lang-menu" id="lang-menu" hidden>
+          <li>
+            <a href="https://sykowni-chlopcy.sk/" hreflang="sk" class="is-active" aria-current="true">
+              <span class="lang-code">SK</span>
+              <span class="lang-name">Slovenská verzia<small>sykowni-chlopcy.sk</small></span>
+              <i class="ico" aria-hidden="true"><svg><use href="#i-check"></use></svg></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://sykowni-chlopcy.pl/" hreflang="pl">
+              <span class="lang-code">PL</span>
+              <span class="lang-name">Poľská verzia<small>sykowni-chlopcy.pl</small></span>
+              <i class="ico" aria-hidden="true"><svg><use href="#i-external-link-alt"></use></svg></i>
+            </a>
+          </li>
+        </ul>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+
+      <a href="#contact-section" class="btn btn-accent btn-sm nav-cta">Bezplatná ponuka</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -98,410 +260,610 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="wrap hero-content">
-    <h1 data-aos="fade-up">Zatepľovanie a fasády,<br /><span class="grad">ktoré sa robia raz a poriadne</span></h1>
-    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-      Dohodneme, poradíme, zrealizujeme a necháme poriadok. Komplexné stavebné práce
-      s vlastným vybavením – so zárukou a termínom, ktorý sa nemení.
+    <h1 data-reveal>Zatepľovanie a fasády,<br /><span class="grad">ktoré sa robia raz</span></h1>
+    <p class="hero-subtitle" data-reveal data-reveal-delay="100">
+      Profesionálne stavebné a rekonštrukčné práce na Slovensku aj v Poľsku.
     </p>
-    <div class="hero-actions" data-aos="fade-up" data-aos-delay="180">
-      <a href="#contact-section" class="btn btn-accent btn-lg">Získať bezplatnú cenovú ponuku <i class="fas fa-arrow-right"></i></a>
-      <a href="tel:+421952570317" class="btn btn-ghost btn-lg"><i class="fas fa-phone-alt"></i> +421 952 570 317</a>
+    <div class="hero-actions" data-reveal data-reveal-delay="180">
+      <a href="#contact-section" class="btn btn-accent btn-lg">Objednať bezplatnú ponuku <i class="ico ico-arrow" aria-hidden="true"><svg><use href="#i-arrow-right"></use></svg></i></a>
+      <a href="tel:+421952570317" class="btn btn-ghost btn-lg"><i class="ico" aria-hidden="true"><svg><use href="#i-phone-alt"></use></svg></i> +421 952 570 317</a>
     </div>
-    <ul class="hero-chips" data-aos="fade-up" data-aos-delay="260">
-      <li><i class="fas fa-tools"></i> Vlastné náradie</li>
-      <li><i class="fas fa-shield-alt"></i> Záruka kvality</li>
-      <li><i class="fas fa-truck"></i> Dovážame materiály</li>
-      <li><i class="fas fa-broom"></i> Upratujeme po sebe</li>
+    <ul class="hero-chips" data-reveal data-reveal-delay="260">
+      <li><i class="ico" aria-hidden="true"><svg><use href="#i-shield-alt"></use></svg></i> Záruka kvality</li>
+      <li><i class="ico" aria-hidden="true"><svg><use href="#i-clock"></use></svg></i> Rýchla realizácia</li>
+      <li><i class="ico" aria-hidden="true"><svg><use href="#i-ruler-combined"></use></svg></i> Dôraz na detail</li>
+      <li><i class="ico" aria-hidden="true"><svg><use href="#i-truck"></use></svg></i> Dovezieme materiál</li>
     </ul>
   </div>
   <a href="#stats" class="hero-scroll" aria-label="Posunúť nadol"><span></span></a>
 </header>
 
-<section id="stats" class="stats-band">
+<section id="stats" class="stats-band" aria-label="Firma v číslach">
   <div class="wrap stats-grid">
-    <div class="stat" data-aos="fade-up">
-      <span class="stat-num" data-count="3" data-suffix="">3</span>
-      <span class="stat-label">roky na trhu</span>
-    </div>
-    <div class="stat" data-aos="fade-up" data-aos-delay="80">
+  <div class="stat" data-reveal data-reveal-delay="80">
       <span class="stat-num" data-count="30" data-suffix="+">30+</span>
       <span class="stat-label">spokojných zákazníkov</span>
     </div>
-    <div class="stat" data-aos="fade-up" data-aos-delay="160">
-      <span class="stat-num" data-count="100" data-suffix="%">100%</span>
-      <span class="stat-label">vlastné vybavenie a lešenie</span>
+    <div class="stat" data-reveal data-reveal-delay="160">
+      <span class="stat-num" data-count="15000" data-suffix="m²">100%</span>
+      <span class="stat-label">zrealizovanej fasády</span>
     </div>
-    <div class="stat" data-aos="fade-up" data-aos-delay="240">
+	<div class="stat" data-reveal>
+      <span class="stat-num" data-count="5" data-suffix="">5</span>
+      <span class="stat-label">rokov skúseností majiteľa</span>
+    </div>
+	<div class="stat" data-reveal data-reveal-delay="240">
       <span class="stat-num" data-count="0" data-suffix=" €">0 €</span>
-      <span class="stat-label">cena za cenovú ponuku a dojazd</span>
+      <span class="stat-label">cena ponuky a dojazdu</span>
     </div>
   </div>
 </section>
 
-<section id="about">
+<section id="about" aria-labelledby="about-title">
   <div class="wrap section-container">
     <div class="about-grid">
-      <div class="about-media" data-aos="fade-right">
+      <div class="about-media" data-reveal="right">
         <div class="about-img-main">
-          <img src="galery_13.jpg" alt="Sykowni Chłopcy počas fasádnych prác na rodinnom dome" loading="lazy" />
+          <img src="galery_13-800.webp" srcset="galery_13-800.webp 800w, galery_13.webp 1400w"
+               sizes="(max-width: 992px) 90vw, 490px"
+               alt="Partia Sykowni Chłopcy počas fasádnych prác na rodinnom dome"
+               loading="lazy" decoding="async" width="1400" height="1050" />
         </div>
         <div class="about-img-sub">
-          <img src="galery_14.jpg" alt="Hotová fasáda rodinného domu" loading="lazy" />
-        </div>
-        <div class="about-badge">
-          <span class="about-badge-num">3</span>
-          <span class="about-badge-txt">roky<br />na trhu</span>
+          <img src="galery_14-800.webp" srcset="galery_14-800.webp 800w, galery_14.webp 1400w"
+               sizes="(max-width: 992px) 45vw, 240px"
+               alt="Hotová biela fasáda rodinného domu po zateplení"
+               loading="lazy" decoding="async" width="1400" height="1050" />
         </div>
       </div>
 
-      <div class="about-text" data-aos="fade-left">
-        <span class="section-tag">O spoločnosti</span>
-        <h2>Fasáda na roky, nie na jednu zimu</h2>
+      <div class="about-text" data-reveal="left">
+        <span class="section-tag">O firme</span>
+        <h2 id="about-title">Sykowni Chłopcy</h2>
         <p class="lead">
-          Sykowni Chłopcy je stavebná firma z Malopoľska. Už tri roky realizujeme zatepľovanie,
-          omietky a fasády pre zákazníkov v Poľsku a na Slovensku.
-        </p>
-        <p>
-          Pracujeme s vlastným vybavením, takže nestrácate čas organizovaním zázemia
-          stavby. Nenútime vás do najdrahších riešení – vyberáme také, ktoré dávajú
-          zmysel pre vašu budovu a rozpočet, a ak sa niečo neoplatí robiť, povieme
-          to na rovinu. Za to, čo zrealizujeme, nesieme plnú zodpovednosť.
+          Stavebná firma z pohraničia. Realizujeme zatepľovanie,
+          omietky a fasády pre zákazníkov na Slovensku aj v Poľsku.
         </p>
 
+
         <ul class="about-list">
-          <li><i class="fas fa-layer-group"></i><div><strong>Vlastné lešenie</strong><span>Neúčtujeme prenájom, začíname okamžite.</span></div></li>
-          <li><i class="fas fa-cubes"></i><div><strong>Komplexný servis materiálov</strong><span>Poradíme, kúpime a dovezieme priamo domov.</span></div></li>
-          <li><i class="fas fa-globe-europe"></i><div><strong>Poľsko a Slovensko</strong><span>Realizujeme zákazky na oboch stranách hranice.</span></div></li>
-          <li><i class="fas fa-shield-alt"></i><div><strong>Záruka</strong><span>Zodpovedáme za kvalitu vykonaných prác.</span></div></li>
-          <li><i class="fas fa-clock"></i><div><strong>Dodržiavanie termínov</strong><span>Dohodneme termín a dodržíme ho.</span></div></li>
-          <li><i class="fas fa-broom"></i><div><strong>Čistota</strong><span>Nechávame po sebe poriadok, nie stavenisko.</span></div></li>
+          <li><i class="ico" aria-hidden="true"><svg><use href="#i-layer-group"></use></svg></i><div><strong>Vlastné lešenie</strong><span>Neúčtujeme prenájom, začíname hneď.</span></div></li>
+          <li><i class="ico" aria-hidden="true"><svg><use href="#i-cubes"></use></svg></i><div><strong>Kompletný servis materiálov</strong><span>Poradíme, kúpime a dovezieme až k domu.</span></div></li>
+          <li><i class="ico" aria-hidden="true"><svg><use href="#i-globe-europe"></use></svg></i><div><strong>Slovensko a Poľsko</strong><span>Realizujeme zákazky na oboch stranách hranice.</span></div></li>
+          <li><i class="ico" aria-hidden="true"><svg><use href="#i-shield-alt"></use></svg></i><div><strong>Záruka</strong><span>Zodpovedáme za kvalitu vykonaných prác.</span></div></li>
+          <li><i class="ico" aria-hidden="true"><svg><use href="#i-clock"></use></svg></i><div><strong>Dodržiavanie termínov</strong><span>Dohodneme termín a držíme sa ho.</span></div></li>
+          <li><i class="ico" aria-hidden="true"><svg><use href="#i-broom"></use></svg></i><div><strong>Čistota</strong><span>Necháme po sebe poriadok.</span></div></li>
         </ul>
 
         <div class="about-actions">
           <a href="#gallery" class="btn btn-primary">Pozrite si naše realizácie</a>
-          <a href="#process" class="btn btn-link">Ako prebieha spolupráca <i class="fas fa-arrow-right"></i></a>
+          <a href="#process" class="btn btn-link">Ako prebieha spolupráca <i class="ico ico-arrow" aria-hidden="true"><svg><use href="#i-arrow-right"></use></svg></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="services" class="bg-light">
+<section id="services" class="bg-light" aria-labelledby="services-title">
   <div class="wrap section-container">
-    <header class="section-head" data-aos="fade-up">
+    <header class="section-head" data-reveal>
       <span class="section-tag">Rozsah prác</span>
-      <h2>Naše služby</h2>
-      <p class="section-sub">Komplexne sa staráme o fasádu a jej okolie – od izolácie až po posledný odkvap.</p>
+      <h2 id="services-title">Naše služby</h2>
+      <p class="section-sub">Komplexne sa staráme o fasádu a všetko okolo nej – od izolácie po posledný odkvap.</p>
     </header>
 
     <div class="services-grid">
-      <article class="service-item" data-aos="fade-up">
-        <div class="service-icon"><i class="fas fa-thermometer-half"></i></div>
+      <article class="service-item" data-reveal>
+        <div class="service-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-thermometer-half"></use></svg></i></div>
         <h3>Zatepľovanie budov</h3>
-        <p>Moderné zatepľovanie rodinných a bytových domov v systéme ETICS – polystyrén alebo vlna, s dôrazom na detaily a tepelné mosty.</p>
+        <p>Moderné zatepľovanie rodinných a bytových domov v systéme ETICS – polystyrén alebo minerálna vlna, s dôrazom na detaily a tepelné mosty.</p>
         <ul class="service-tags"><li>polystyrén</li><li>vlna</li><li>sieťka a lepidlo</li></ul>
       </article>
 
-      <article class="service-item" data-aos="fade-up" data-aos-delay="80">
-        <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
-        <h3>Vonkajšie omietky</h3>
-        <p>Fasádne omietky, ktoré chránia pred vlhkosťou a počasím, a zároveň dodávajú budove moderný a rovnomerný vzhľad na dlhé roky.</p>
-        <ul class="service-tags"><li>silikónová</li><li>akrylátová</li><li>mozaiková</li></ul>
+      <article class="service-item" data-reveal data-reveal-delay="80">
+        <div class="service-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-paint-roller"></use></svg></i></div>
+        <h3>Vonkajšia omietka</h3>
+        <p>Fasádne omietky, ktoré chránia stenu pred vlhkosťou a počasím a zároveň dodávajú budove moderný, rovnomerný vzhľad na roky.</p>
+        <ul class="service-tags"><li>silikónová</li><li>akrylátová</li><li>mozaika</li></ul>
       </article>
 
-      <article class="service-item" data-aos="fade-up" data-aos-delay="160">
-        <div class="service-icon"><i class="fas fa-hammer"></i></div>
+      <article class="service-item" data-reveal data-reveal-delay="160">
+        <div class="service-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-hammer"></use></svg></i></div>
         <h3>Klampiarske práce</h3>
         <p>Oplechovanie strechy a prvkov budovy – tesne, esteticky a tak, aby sa voda nemala kde zadržiavať.</p>
         <ul class="service-tags"><li>oplechovanie</li><li>komíny</li><li>atiky</li></ul>
       </article>
 
-      <article class="service-item" data-aos="fade-up" data-aos-delay="240">
-        <div class="service-icon"><i class="fas fa-ruler-combined"></i></div>
+      <article class="service-item" data-reveal data-reveal-delay="240">
+        <div class="service-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-ruler-combined"></use></svg></i></div>
         <h3>Parapety a odkvapy</h3>
-        <p>Montáž vonkajších a vnútorných parapetov a kompletných odkvapových systémov – so zachovaním spádov a poriadnym utesnením.</p>
+        <p>Montáž vonkajších a vnútorných parapetov aj kompletných odkvapových systémov – so zachovaním spádov a poriadnym utesnením.</p>
         <ul class="service-tags"><li>parapety</li><li>odkvapy</li><li>zvodové rúry</li></ul>
       </article>
 
-      <article class="service-item" data-aos="fade-up" data-aos-delay="320">
-        <div class="service-icon"><i class="fas fa-columns"></i></div>
-        <h3>Strešné podhľady</h3>
-        <p>Odolné podhľady chrániace drevenú konštrukciu pred vlhkosťou a vtákmi, ktoré zároveň uzatvárajú vzhľad celej fasády.</p>
+      <article class="service-item" data-reveal data-reveal-delay="320">
+        <div class="service-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-columns"></use></svg></i></div>
+        <h3>Strešný podhľad</h3>
+        <p>Odolné podhľady, ktoré chránia drevenú konštrukciu pred vlhkosťou a vtákmi a zároveň uzatvárajú vzhľad celej fasády.</p>
         <ul class="service-tags"><li>PVC</li><li>drevo</li><li>plech</li></ul>
       </article>
 
-      <article class="service-item service-cta" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-icon"><i class="fas fa-question"></i></div>
+      <article class="service-item service-cta" data-reveal data-reveal-delay="400">
+        <div class="service-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-question"></use></svg></i></div>
         <h3>Nenašli ste to v zozname?</h3>
-        <p>Napíšte alebo zavolajte a popíšte, čo potrebujete urobiť. Ak daný rozsah nie je našou špecializáciou, povieme to na rovinu a poradíme, kto sa o to postará.</p>
-        <a href="#contact-section" class="btn btn-accent btn-sm">Požiadať o cenovú ponuku</a>
+        <p>Napíšte alebo zavolajte a popíšte, čo potrebujete urobiť. Ak daný rozsah nie je naša špecializácia, povieme to na rovinu a poradíme, kto sa o to postará.</p>
+        <a href="#contact-section" class="btn btn-accent btn-sm">Opýtať sa na cenu</a>
       </article>
     </div>
   </div>
 </section>
 
-<section id="process">
+<section id="process" aria-labelledby="process-title">
   <div class="wrap section-container">
-    <header class="section-head" data-aos="fade-up">
+    <header class="section-head" data-reveal>
       <span class="section-tag">Ako pracujeme</span>
-      <h2>Štyri kroky k hotovej fasáde</h2>
-      <p class="section-sub">Viete, čo sa deje v každej fáze – a koľko to bude stáť ešte predtým, ako začneme.</p>
+      <h2 id="process-title">Ako realizujeme projekt</h2>
+      <p class="section-sub">Viete, čo sa deje v každej fáze – a koľko to stojí, ešte než začneme.</p>
     </header>
 
     <ol class="process-grid">
-      <li class="process-step" data-aos="fade-up">
+      <li class="process-step" data-reveal>
         <div class="process-node">
-          <div class="process-icon"><i class="fas fa-ruler-combined"></i></div>
+          <div class="process-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-ruler-combined"></use></svg></i></div>
           <span class="process-num">01</span>
         </div>
-        <h3>Bezplatná cenová ponuka a zameranie</h3>
-        <p>Prídeme na miesto, zhodnotíme stav budovy a vykonáme zameranie – vypočítame, koľko a akého materiálu bude potrebných.</p>
+        <h3>Bezplatná ponuka a zameranie</h3>
+        <p>Prídeme na miesto, posúdime stav budovy a urobíme zameranie. Vypočítame, koľko a akého materiálu bude treba.</p>
       </li>
-      <li class="process-step" data-aos="fade-up" data-aos-delay="100">
+      <li class="process-step" data-reveal data-reveal-delay="100">
         <div class="process-node">
-          <div class="process-icon"><i class="fas fa-cubes"></i></div>
+          <div class="process-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-cubes"></use></svg></i></div>
           <span class="process-num">02</span>
         </div>
         <h3>Výber materiálov</h3>
-        <p>Poradíme s najlepšími riešeniami pre vašu budovu a rozpočet. Na požiadanie sami zakúpime a dovezieme materiál na miesto – nemusíte sa o nič starať.</p>
+        <p>Poradíme najlepšie riešenia pre vašu budovu a rozpočet. Materiál sami nakúpime a dovezieme na miesto.</p>
       </li>
-      <li class="process-step" data-aos="fade-up" data-aos-delay="200">
+      <li class="process-step" data-reveal data-reveal-delay="200">
         <div class="process-node">
-          <div class="process-icon"><i class="fas fa-hard-hat"></i></div>
+          <div class="process-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-hard-hat"></use></svg></i></div>
           <span class="process-num">03</span>
         </div>
         <h3>Realizácia</h3>
-        <p>Prídeme na stavbu v dohodnutom termíne a pracujeme systematicky. Budete priebežne informovaní o postupe prác.</p>
+        <p>Realizujeme projekt. O postupe prác vás priebežne informujeme.</p>
       </li>
-      <li class="process-step" data-aos="fade-up" data-aos-delay="300">
+      <li class="process-step" data-reveal data-reveal-delay="300">
         <div class="process-node">
-          <div class="process-icon"><i class="fas fa-broom"></i></div>
+          <div class="process-icon"><i class="ico" aria-hidden="true"><svg><use href="#i-broom"></use></svg></i></div>
           <span class="process-num">04</span>
         </div>
         <h3>Odovzdanie prác</h3>
-        <p>Po dokončení prác upraceme okolie a odovzdáme vám hotovú fasádu. Preberáte si dokončenú prácu, nie stavenisko.</p>
+        <p>Po dokončení prác upraceme okolie a odovzdáme vám hotový projekt.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<section id="gallery" class="bg-dark">
+<section id="gallery" class="bg-dark" aria-labelledby="gallery-title">
   <div class="wrap section-container">
-    <header class="section-head section-head-light" data-aos="fade-up">
+    <header class="section-head section-head-light section-head-wide" data-reveal>
       <span class="section-tag">Realizácie</span>
-      <h2>Pozrite si efekt pred a po</h2>
-      <p class="section-sub">Kliknite na fotografiu, aby ste videli stav pred začatím prác a po ich dokončení.</p>
+      <h2 id="gallery-title">Ukážky realizácií</h2>
+      <p class="section-sub">Kliknite na dlaždicu a pozrite si fotografie spred prác aj po ich dokončení</p>
     </header>
 
     <div class="gallery-grid">
-      <div class="gallery-card" data-aos="fade-up" data-before="modern_6.jpg" data-after="background.jpg">
-        <div class="img-wrap">
-          <img src="background.jpg" alt="Realizácia 1 – fasáda rodinného domu" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
+      <article class="gallery-card" data-reveal
+               data-place="Osikov" data-scope="Kompletné zateplenie"
+               data-area="500 m²" data-time="4 týždne">
+        <button type="button" class="gc-open" aria-label="Osikov, kompletné zateplenie – otvoriť 3 porovnania pred a po">
+          <span class="gc-media">
+            <img class="gc-after" src="background-800.webp" srcset="background-800.webp 800w, background.webp 1400w"
+                 sizes="(max-width: 660px) 92vw, (max-width: 1000px) 46vw, 370px"
+                 alt="Osikov – budova po zateplení polystyrénom a nanesení štruktúrovanej omietky"
+                 loading="lazy" decoding="async" width="1400" height="1050" />
+            <img class="gc-before" data-src="modern_6.webp" alt="" aria-hidden="true" decoding="async" width="1400" height="1050" />
+            <span class="gc-tags">
+              <span class="gc-place"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Osikov</span>
+            </span>
+            <span class="gc-body">
+              <span class="gc-title">Kompletné zateplenie</span>
+              <span class="gc-meta">
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-vector-square"></use></svg></i>500 m²</span>
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-clock-o"></use></svg></i>4 týždne</span>
+              </span>
+            </span>
+          </span>
+        </button>
+
+        <template class="gc-pairs">
+          <p>Budova bola zateplená polystyrénom 20 cm, vystužená sieťkou a na to sme naniesli štruktúrovanú omietku.</p>
+          <figure data-before="modern_6.webp" data-after="background.webp">
+            <ul>
+              <li data-side="after" data-x="17" data-y="75">Montáž parapetov</li>
+            </ul>
+          </figure>
+          <figure data-before="modern_7.webp" data-after="modern_5.webp">
+		    <ul>
+              <li data-side="before" data-x="65" data-y="40">Zabezpečenie zábradlia a okien pred začatím prác</li>
+            </ul>
+		  </figure>
+          <figure data-before="modern_8.webp" data-after="modern_2.webp">
+		    <ul>
+              <li data-side="after" data-x="40" data-y="70">Montáž parapetov</li>
+            </ul>
+		  </figure>
+
+        </template>
+      </article>
+
+      <article class="gallery-card" data-reveal data-reveal-delay="60"
+               data-place="Honce" data-scope="Obnova budovy"
+               data-area="330 m²" data-time="11 dní">
+        <button type="button" class="gc-open" aria-label="Honce, obnova budovy – otvoriť 2 porovnania pred a po">
+          <span class="gc-media">
+            <img class="gc-after" src="galery_12-800.webp" srcset="galery_12-800.webp 800w, galery_12.webp 1400w"
+                 sizes="(max-width: 660px) 92vw, (max-width: 1000px) 46vw, 370px"
+                 alt="Honce – budova zateplená sklenou vlnou so silikónovou omietkou a mozaikovým soklom"
+                 loading="lazy" decoding="async" width="1400" height="1050" />
+            <img class="gc-before" data-src="galery_3.webp" alt="" aria-hidden="true" decoding="async" width="1400" height="1050" />
+            <span class="gc-tags">
+              <span class="gc-place"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Honce</span>
+            </span>
+            <span class="gc-body">
+              <span class="gc-title">Obnova budovy</span>
+              <span class="gc-meta">
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-vector-square"></use></svg></i>330 m²</span>
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-clock-o"></use></svg></i>11 dní</span>
+              </span>
+            </span>
+          </span>
+        </button>
+
+        <template class="gc-pairs">
+          <p>Použili sme izoláciu zo sklenej vlny s hrúbkou 10 cm. Nanesená bola silikónová omietka s mozaikovým soklom.</p>
+          <figure data-before="galery_3.webp" data-after="galery_12.webp">
+          </figure>
+          <figure data-before="galery_11.webp" data-after="galery_1.webp">
+		  <ul>
+              <li data-side="before" data-x="37" data-y="90">Ochrana podkladu pred poškodením</li>
+            </ul>
+		  </figure>
+        </template>
+      </article>
+
+      <article class="gallery-card" data-reveal data-reveal-delay="120"
+               data-place="Grybów" data-scope="Finálna vrstva fasády"
+               data-area="180 m²" data-time="3 dni">
+        <button type="button" class="gc-open" aria-label="Grybów, finálna vrstva fasády – otvoriť 2 porovnania pred a po">
+          <span class="gc-media">
+            <img class="gc-after" src="galery_16-800.webp" srcset="galery_16-800.webp 800w, galery_16.webp 1400w"
+                 sizes="(max-width: 660px) 92vw, (max-width: 1000px) 46vw, 370px"
+                 alt="Grybów – biela omietka na fasáde po oprave stierky a napenetrovaní"
+                 loading="lazy" decoding="async" width="1400" height="1050" />
+            <img class="gc-before" data-src="galery_15.webp" alt="" aria-hidden="true" decoding="async" width="1400" height="1050" />
+            <span class="gc-tags">
+              <span class="gc-place"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Grybów</span>
+            </span>
+            <span class="gc-body">
+              <span class="gc-title">Finálna vrstva fasády</span>
+              <span class="gc-meta">
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-vector-square"></use></svg></i>180 m²</span>
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-clock-o"></use></svg></i>3 dni</span>
+              </span>
+            </span>
+          </span>
+        </button>
+
+        <template class="gc-pairs">
+          <p>Robili sme opravy po predchádzajúcich realizátoroch.</p>
+          <figure data-before="galery_15.webp" data-after="galery_16.webp">
+            <ul>
+              <li data-side="before" data-x="27" data-y="57">Príprava podkladu a stierkovanie</li>
+              <li data-side="after" data-x="17" data-y="63">Nakoniec bola na napenetrovaný povrch nanesená biela omietka</li>
+            </ul>
+          </figure>
+          <figure data-before="galery_17.webp" data-after="galery_18.webp">
+            <ul>
+              <li data-side="before" data-x="27" data-y="57">Príprava podkladu a stierkovanie</li>
+              <li data-side="after" data-x="17" data-y="63">Nakoniec bola na napenetrovaný povrch nanesená biela omietka</li>
+            </ul>
+          </figure>
+        </template>
+      </article>
+
+      <article class="gallery-card" data-reveal
+               data-place="Dulova Ves" data-scope="Obnova budovy"
+               data-area="220 m²" data-time="7 dní">
+        <button type="button" class="gc-open" aria-label="Dulova Ves, obnova budovy – otvoriť porovnanie pred a po">
+          <span class="gc-media">
+            <img class="gc-after" src="galery_2-800.webp" srcset="galery_2-800.webp 800w, galery_2.webp 1400w"
+                 sizes="(max-width: 660px) 92vw, (max-width: 1000px) 46vw, 370px"
+                 alt="Dulova Ves – dom po obnove s fasádou v intenzívnej farbe"
+                 loading="lazy" decoding="async" width="1400" height="1050" />
+            <img class="gc-before" data-src="galery_9.webp" alt="" aria-hidden="true" decoding="async" width="1400" height="1050" />
+            <span class="gc-tags">
+              <span class="gc-place"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Dulova Ves</span>
+            </span>
+            <span class="gc-body">
+              <span class="gc-title">Obnova budovy</span>
+              <span class="gc-meta">
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-vector-square"></use></svg></i>220 m²</span>
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-clock-o"></use></svg></i>7 dní</span>
+              </span>
+            </span>
+          </span>
+        </button>
+
+        <template class="gc-pairs">
+          <p>Použitie rôznych hrúbok polystyrénu na vyrovnanie stien.</p>
+          <figure data-before="galery_9.webp" data-after="galery_2.webp">
+            <ul>
+              <li data-side="before" data-x="62" data-y="45">Napenetrovaný povrch</li>
+              <li data-side="after" data-x="69" data-y="48">Intenzívna prémiová farba</li>
+            </ul>
+          </figure>
+        </template>
+      </article>
+
+      <article class="gallery-card" data-reveal data-reveal-delay="60"
+               data-place="Slovinky" data-scope="Kompletný fasádny systém"
+               data-area="250 m²" data-time="9 dní">
+        <button type="button" class="gc-open" aria-label="Slovinky, kompletný fasádny systém – otvoriť porovnanie pred a po">
+          <span class="gc-media">
+            <img class="gc-after" src="galery_14-800.webp" srcset="galery_14-800.webp 800w, galery_14.webp 1400w"
+                 sizes="(max-width: 660px) 92vw, (max-width: 1000px) 46vw, 370px"
+                 alt="Slovinky – dom s hotovou bielou fasádou po kombinácii vlny a polystyrénu"
+                 loading="lazy" decoding="async" width="1400" height="1050" />
+            <img class="gc-before" data-src="galery_13.webp" alt="" aria-hidden="true" decoding="async" width="1400" height="1050" />
+            <span class="gc-tags">
+              <span class="gc-place"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Slovinky</span>
+            </span>
+            <span class="gc-body">
+              <span class="gc-title">Kompletný fasádny systém</span>
+              <span class="gc-meta">
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-vector-square"></use></svg></i>250 m²</span>
+                <span><i class="ico" aria-hidden="true"><svg><use href="#i-clock-o"></use></svg></i>9 dní</span>
+              </span>
+            </span>
+          </span>
+        </button>
+
+        <template class="gc-pairs">
+          <p>Bola použitá kombinácia izolácie z minerálnej vlny a polystyrénu.</p>
+          <figure data-before="galery_13.webp" data-after="galery_14.webp">
+            <ul>
+              <li data-side="before" data-x="37" data-y="57">Pre chladnejšie jesenné teploty boli práce prerušené vo fáze sieťky s lepidlom</li>
+              <li data-side="after" data-x="37" data-y="63">Po začiatku jarnej sezóny bol projekt dokončený</li>
+            </ul>
+          </figure>
+        </template>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================================
+     HODNOTENIA
+
+     Sekcia je skrytá a odkryje sa až vtedy, keď je v reviews.json aspoň
+     stanovený počet hodnotení z vizitky Google. Súbor dopĺňa raz denne
+     GitHub Action (.github/workflows/reviews.yml), a karty, hodnotenie
+     aj počítadlo stavia script.js. Prah sa mení v konštante
+     MIN_REVIEWS v script.js.
+     ===================================================================== -->
+<section id="reviews" hidden aria-labelledby="reviews-title">
+  <div class="wrap section-container">
+    <header class="section-head" data-reveal>
+      <span class="section-tag">Hodnotenia</span>
+      <h2 id="reviews-title">Čo o nás hovoria zákazníci</h2>
+      <p class="section-sub">Pár slov od ľudí, u ktorých je robota už hotová a odovzdaná.</p>
+    </header>
+
+    <div class="reviews-layout">
+      <aside class="google-card" data-reveal>
+        <div class="gc-top">
+          <span class="gc-logo" aria-hidden="true">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+              <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+              <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+              <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+            </svg>
+          </span>
+          <div>
+            <strong>Sykowni Chłopcy</strong>
+            <span>Hodnotenia zákazníkov</span>
+          </div>
         </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-aos-delay="60" data-before="modern_7.jpg" data-after="modern_5.jpg">
-        <div class="img-wrap">
-          <img src="modern_5.jpg" alt="Realizácia 2 – zateplenie a vonkajšia omietka" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
+
+        <div class="gc-score">
+          <span class="gc-num">5,0</span>
+          <div class="rv-stars" role="img" aria-label="Priemerné hodnotenie 5 z 5">
+            <i class="ico" aria-hidden="true"><svg><use href="#i-star"></use></svg></i><i class="ico" aria-hidden="true"><svg><use href="#i-star"></use></svg></i><i class="ico" aria-hidden="true"><svg><use href="#i-star"></use></svg></i><i class="ico" aria-hidden="true"><svg><use href="#i-star"></use></svg></i><i class="ico" aria-hidden="true"><svg><use href="#i-star"></use></svg></i>
+          </div>
+          <span class="gc-count">na základe 8 hodnotení</span>
         </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-aos-delay="120" data-before="modern_8.jpg" data-after="modern_2.jpg">
-        <div class="img-wrap">
-          <img src="modern_2.jpg" alt="Realizácia 3 – moderná fasáda" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
+
+        <ul class="gc-bars">
+          <li><span>5</span><span class="gc-bar"><i style="--w:100%"></i></span></li>
+          <li><span>4</span><span class="gc-bar"><i style="--w:0%"></i></span></li>
+          <li><span>3</span><span class="gc-bar"><i style="--w:0%"></i></span></li>
+          <li><span>2</span><span class="gc-bar"><i style="--w:0%"></i></span></li>
+          <li><span>1</span><span class="gc-bar"><i style="--w:0%"></i></span></li>
+        </ul>
+
+        <!-- odkaz sa automaticky nahradí tým z reviews.json, keď workflow stiahne dáta -->
+        <a href="https://www.google.com/maps?cid=18325216394418417962" target="_blank" rel="noopener" class="gc-link">
+          Pozrieť vizitku v Google
+          <i class="ico" aria-hidden="true"><svg><use href="#i-external-link-alt"></use></svg></i>
+        </a>
+      </aside>
+
+      <div class="reviews-col" data-reveal data-reveal-delay="100">
+        <div class="reviews-track" id="reviews-track" role="group" aria-label="Hodnotenia zákazníkov">
+          <!-- karty vkladá skript na základe reviews.json -->
         </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-before="galery_9.jpg" data-after="galery_2.jpg">
-        <div class="img-wrap">
-          <img src="galery_2.jpg" alt="Realizácia 4 – fasádne práce" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
-        </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-aos-delay="60" data-before="galery_11.jpg" data-after="galery_1.jpg">
-        <div class="img-wrap">
-          <img src="galery_1.jpg" alt="Realizácia 5 – zateplenie budovy" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
-        </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-aos-delay="120" data-before="galery_3.jpg" data-after="galery_12.jpg">
-        <div class="img-wrap">
-          <img src="galery_12.jpg" alt="Realizácia 6 – fasáda po rekonštrukcii" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
-        </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-before="galery_13.jpg" data-after="galery_14.jpg">
-        <div class="img-wrap">
-          <img src="galery_14.jpg" alt="Realizácia 7 – dom po zateplení" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
-        </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-aos-delay="60" data-before="galery_15.jpg" data-after="galery_16.jpg">
-        <div class="img-wrap">
-          <img src="galery_16.jpg" alt="Realizácia 8 – dokončená fasáda" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
-        </div>
-      </div>
-      <div class="gallery-card" data-aos="fade-up" data-aos-delay="120" data-before="galery_17.jpg" data-after="galery_18.jpg">
-        <div class="img-wrap">
-          <img src="galery_18.jpg" alt="Realizácia 9 – fasáda s podhľadom" loading="lazy" />
-          <div class="hover-overlay"><span class="more-btn"><i class="fas fa-search-plus"></i><span class="btn-label">Zobraziť porovnanie</span></span></div>
+
+        <div class="reviews-controls">
+          <div class="reviews-dots" id="reviews-dots"></div>
+          <div class="reviews-arrows">
+            <button type="button" class="rv-arrow" id="reviews-prev" aria-label="Predchádzajúce hodnotenia"><i class="ico" aria-hidden="true"><svg><use href="#i-chevron-left"></use></svg></i></button>
+            <button type="button" class="rv-arrow" id="reviews-next" aria-label="Ďalšie hodnotenia"><i class="ico" aria-hidden="true"><svg><use href="#i-chevron-right"></use></svg></i></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="wrap cta-inner" data-aos="fade-up">
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="wrap cta-inner" data-reveal>
     <div class="cta-text">
-      <h2>Bezplatná cenová ponuka a zameranie – prídeme na miesto</h2>
-      <p>Povedzte, čo plánujete urobiť. Dohodneme sa na obhliadke, vykonáme zameranie, vypočítame potrebu materiálov a pripravíme konkrétnu cenovú ponuku – bez poplatkov a bez záväzkov.</p>
+      <h2 id="cta-title">Bezplatná ponuka a zameranie – prídeme na miesto</h2>
+      <p>Povedzte, čo plánujete urobiť. Dohodneme obhliadku, urobíme zameranie, vypočítame spotrebu materiálu a pripravíme konkrétnu cenovú ponuku – bez poplatkov a bez záväzkov.</p>
     </div>
     <div class="cta-actions">
-      <a href="tel:+421952570317" class="btn btn-accent btn-lg"><i class="fas fa-phone-alt"></i> Zavolajte teraz</a>
+      <a href="tel:+421952570317" class="btn btn-accent btn-lg"><i class="ico" aria-hidden="true"><svg><use href="#i-phone-alt"></use></svg></i> Zavolajte teraz</a>
       <a href="#contact-section" class="btn btn-outline-light btn-lg">Napíšte správu</a>
     </div>
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" aria-labelledby="faq-title">
   <div class="wrap section-container">
-    <header class="section-head" data-aos="fade-up">
+    <header class="section-head" data-reveal>
       <span class="section-tag">FAQ</span>
-      <h2>Najčastejšie otázky</h2>
-      <p class="section-sub">Nenašli ste odpoveď? Zavolajte – vysvetlíme všetko ľudsky a zrozumiteľne.</p>
+      <h2 id="faq-title">Najčastejšie otázky</h2>
     </header>
 
-    <div class="faq-list" data-aos="fade-up">
+    <div class="faq-list" data-reveal>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">V akej oblasti pracujete?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Na poľskej strane pôsobíme v celom Malopoľsku, najmä v okolí Grybówa a Nowého Sącza. Na Slovensku realizujeme zákazky v regióne Prešova, Popradu, Košíc a Bardejova. Do úvahy prichádzajú aj vzdialenejšie výjazdy – stačí sa opýtať, radi preveríme, či sa to dá zosúladiť s termínmi.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">V akej oblasti pracujete?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><p>Na Slovensku realizujeme zákazky v regióne Prešova, Popradu, Košíc a Bardejova. Na poľskej strane pôsobíme v celom Malopoľsku, najmä v okolí Grybówa a Nowého Sącza. Do úvahy prichádzajú aj vzdialenejšie výjazdy – stačí sa opýtať, radi preveríme, či sa to dá zladiť s termínmi.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Koľko stojí cenová ponuka a dojazd?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Nič. Dojazd, obhliadka, zameranie a príprava cenovej ponuky sú bezplatné a k ničomu vás nezaväzujú – a to aj v prípade, ak sa nakoniec rozhodnete pre iných majstrov.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">Pomáhate pri výbere farby a typu omietky?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><p>Áno. Poradíme, aká štruktúra a farebnosť sa hodí k vašej budove a ktoré riešenia sú v našom podnebí trvácnejšie. Rozhodnutie je vždy na vás.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Pomáhate pri výbere farby a typu omietky?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Áno. Poradíme vám, aká štruktúra a farba sa hodí k vašej budove a ktoré riešenia sú v našom podnebí trvácnejšie. Rozhodnutie je však vždy na vás.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">Poskytujete záruku na vykonané práce?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><p>Áno. Na nami vykonané práce poskytujeme záruku – podrobnosti a rozsah dohodneme individuálne pri dojednávaní zákazky.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Kto kupuje materiály?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Ako vám to vyhovuje. Poradíme pri výbere materiálov a na požiadanie ich sami kúpime a dovezieme na miesto – v takom prípade sa nemusíte o nič starať. Môžete si ich zabezpečiť aj sami a my vám poradíme, koľko a čoho treba objednať.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">Čo sa deje s parapetmi, odkvapmi a lampami pri zatepľovaní?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><p>Pred začatím prác ich demontujeme a po zateplení znova namontujeme – so zohľadnením novej hrúbky steny. Ak je niečo na výmenu, povieme to vo fáze cenovej ponuky, nie počas prác.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Poskytujete záruku na vykonané práce?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Áno. Na nami vykonané práce poskytujeme záruku – podrobnosti a rozsah určujeme individuálne pri dohadovaní zákazky.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">Ako prebieha vyúčtovanie?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><p>Rozsah, cenu a harmonogram platieb dohodneme pred nástupom na stavbu a preberieme pri predložení cenovej ponuky. Náklady sa počas prác „nenabaľujú“.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Ako rýchlo môžete začať?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Termín závisí od sezóny a rozsahu prác. Po obhliadke uvedieme reálny termín začatia a ukončenia – a dodržíme ho.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">Koľko stojí cenová ponuka a chodíte na obhliadku?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><p>Cenová ponuka spolu s dojazdom a zameraním je bezplatná a k ničomu nezaväzuje. Prídeme, pozrieme si budovu, zameriame ju a až na tomto základe povieme cenu – neodhadujeme „od oka“ cez telefón.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Ako dlho trvá zateplenie domu?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>To závisí od plochy fasády, stavu stien a rozsahu dodatočných prác. Pri typickom rodinnom dome ide zvyčajne o niekoľko týždňov. Konkrétny harmonogram poskytneme po zameraní, aby sme nestrieľali termíny naslepo.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Pracujete aj v zime?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>„Mokré“ procesy – lepidlá, sieťka, omietky – vyžadujú vhodnú teplotu, preto ich plánujeme v sezóne. Mimo nej realizujeme napr. klampiarske práce, podhľady, parapety a odkvapy. Ak nie sú podmienky na kvalitnú prácu, povieme to na rovinu, namiesto toho, aby sme riskovali výsledok.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Čo sa deje s parapetmi, odkvapmi a lampami pri zatepľovaní?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Pred začatím prác ich demontujeme a po zateplení opäť namontujeme – so zohľadnením novej hrúbky steny. Ak je potrebné niečo vymeniť, povieme to už vo fáze cenovej ponuky, nie počas prác.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Ako prebieha vyúčtovanie?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Rozsah, cenu a harmonogram platieb si dohodneme pred príchodom na stavbu a preberieme pri predkladaní cenovej ponuky. Náklady sa počas prác „nenabaľujú“.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Môžem si pozrieť viac vašich realizácií?<i class="fas fa-plus"></i></button>
-        <div class="faq-a"><p>Jasné – časť fotografií „pred a po“ nájdete v <a href="#gallery">galérii realizácií</a>. Ak chcete vidieť niečo podobné vašej budove, zavolajte a pošleme vám ďalšie fotky.</p></div>
+        <h3 class="faq-h"><button class="faq-q" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">Môžem si pozrieť viac vašich realizácií?<i class="ico" aria-hidden="true"><svg><use href="#i-plus"></use></svg></i></button></h3>
+        <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><p>Jasné – časť fotografií „pred a po“ nájdete v <a href="#gallery">galérii realizácií</a>. Ak chcete vidieť niečo podobné vašej budove, zavolajte a pošleme vám ďalšie fotky.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact-section" class="bg-light">
+<section id="contact-section" class="bg-light" aria-labelledby="contact-title">
   <div class="wrap section-container">
-    <header class="section-head" data-aos="fade-up">
+    <header class="section-head" data-reveal>
       <span class="section-tag">Kontakt</span>
-      <h2>Poďme sa porozprávať o vašej investícii</h2>
-      <p class="section-sub">Zavolajte alebo napíšte – ozveme sa, hoci aj z lešenia.</p>
+      <h2 id="contact-title">Poďme sa porozprávať o vašej investícii</h2>
     </header>
 
     <div class="contact-wrapper">
-      <div class="contact-box" data-aos="fade-right">
+      <div class="contact-box" data-reveal="right">
         <h3 class="contact-header">Odoslať dopyt</h3>
-        <form id="contact-form" action="https://formspree.io/f/xgvyvrle" method="POST">
-          <input type="hidden" name="_subject" value="Sykowni Chłopcy – nová správa" />
+        <form id="contact-form" action="https://formspree.io/f/xoeavjnl" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Sykowni Chłopcy SK – nová správa" />
+          <input type="hidden" name="_language" value="sk" />
+          <!-- pasca na boty: človek toto pole neuvidí a nevyplní -->
+          <div class="form-gotcha" aria-hidden="true">
+            <label for="company">Názov firmy</label>
+            <input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="name">Meno a priezvisko</label>
-              <input type="text" id="name" name="name" placeholder="napr. Ján Kováč" required />
+              <input type="text" id="name" name="name" placeholder="napr. Ján Kováč" autocomplete="name"
+                     required aria-describedby="name-error" />
+              <p class="field-error" id="name-error" hidden></p>
             </div>
             <div class="form-group">
               <label for="email">E-mailová adresa</label>
-              <input type="email" id="email" name="email" placeholder="jan@example.com" required />
+              <input type="email" id="email" name="email" placeholder="jan@example.com" autocomplete="email"
+                     inputmode="email" required aria-describedby="email-error" />
+              <p class="field-error" id="email-error" hidden></p>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="phone">Telefón <span class="opt">(voliteľné)</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="napr. 0900 123 456" />
+              <input type="tel" id="phone" name="phone" placeholder="napr. 0900 123 456" autocomplete="tel" inputmode="tel" />
             </div>
             <div class="form-group">
-              <label for="scope">Rozsah prác</label>
+              <label for="scope">Forma odpovede</label>
               <select id="scope" name="scope">
-                <option value="Zatepľovanie budov">Zatepľovanie budov</option>
-                <option value="Vonkajšie omietky">Vonkajšie omietky</option>
-                <option value="Klampiarske práce">Klampiarske práce</option>
-                <option value="Parapety a odkvapy">Parapety a odkvapy</option>
-                <option value="Strešné podhľady">Strešné podhľady</option>
-                <option value="Iné / viac služieb">Iné / viac služieb</option>
+                <option value="E-mail">E-mail</option>
+                <option value="SMS">SMS</option>
+                <option value="Telefón">Telefón</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label for="message">Správa</label>
-            <textarea id="message" name="message" placeholder="Napíšte stručne o budove: výmera, lokalita, plánovaný termín..." required></textarea>
+            <textarea id="message" name="message" placeholder="Napíšte stručne o budove: výmera, lokalita, plánovaný termín..."
+                      required aria-describedby="message-error"></textarea>
+            <p class="field-error" id="message-error" hidden></p>
           </div>
-          <button type="submit" class="btn btn-accent btn-block">Odoslať dopyt <i class="fas fa-paper-plane"></i></button>
-          <p id="form-message" class="form-message"></p>
-          <p class="form-note">Odoslaním správy súhlasíte so spätným kontaktovaním ohľadom vášho dopytu.</p>
+          <button type="submit" class="btn btn-accent btn-block">Odoslať dopyt <i class="ico" aria-hidden="true"><svg><use href="#i-paper-plane"></use></svg></i></button>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+          <p class="form-note">
+            Odoslaním správy súhlasíte so spätným kontaktovaním vo veci dopytu. Prevádzkovateľom
+            je Tomasz Grygiel SYKOWNI-CHLOPCY, IČ DPH PL7343620881 – podrobnosti nájdete v
+            <a href="ochrana-osobnych-udajov.html">ochrane osobných údajov</a>.
+          </p>
         </form>
       </div>
 
-      <div class="contact-side" data-aos="fade-left">
+      <div class="contact-side" data-reveal="left">
         <div class="contact-box contact-info">
           <h3 class="contact-header">Kontaktné údaje</h3>
           <a href="tel:+421952570317" class="info-item">
-            <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+            <div class="icon-circle"><i class="ico" aria-hidden="true"><svg><use href="#i-phone-alt"></use></svg></i></div>
             <div><span class="info-label">Telefón</span><p>+421 952 570 317</p></div>
           </a>
-          <a href="mailto:grygieltomek99@gmail.com" class="info-item">
-            <div class="icon-circle"><i class="fas fa-envelope"></i></div>
-            <div><span class="info-label">E-mail</span><p>grygieltomek99@gmail.com</p></div>
+          <a href="mailto:schlopcy@gmail.com" class="info-item">
+            <div class="icon-circle"><i class="ico" aria-hidden="true"><svg><use href="#i-envelope"></use></svg></i></div>
+            <div><span class="info-label">E-mail</span><p>schlopcy@gmail.com</p></div>
           </a>
-          <a href="https://maps.google.com/?q=33-330+Grybów" target="_blank" rel="noopener" class="info-item">
-            <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
-            <div><span class="info-label">Sídlo</span><p>33‑330 Grybów, Malopoľsko</p></div>
+          <a href="https://maps.app.goo.gl/REYcrivsohncNmFw8" target="_blank" rel="noopener" class="info-item">
+            <div class="icon-circle"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i></div>
+            <div><span class="info-label">Sídlo</span><p>Biała Wyżna 380<br />33-330 Grybów, Poľsko</p></div>
           </a>
           <div class="info-item info-static">
-            <div class="icon-circle"><i class="fas fa-globe-europe"></i></div>
-            <div><span class="info-label">Oblasť pôsobenia</span><p>Malopoľsko a Slovensko</p></div>
+            <div class="icon-circle"><i class="ico" aria-hidden="true"><svg><use href="#i-globe-europe"></use></svg></i></div>
+            <div><span class="info-label">Oblasť pôsobenia</span><p>Prešov · Poprad · Košice · Bardejov</p></div>
           </div>
         </div>
 
+        <!-- loading="lazy" odkladá načítanie mapy do chvíle, keď sa
+             návštevník dostane k sekcii kontaktu – bez klikania -->
         <div class="map-box">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.3323049107954!2d20.94165687679058!3d49.626359542037965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e13d9697f3911%3A0x4b78c9509df656ea!2sSykowni%20Ch%C5%82opcy!5e0!3m2!1spl!2spl!4v1722316880000!5m2!1spl!2spl"
-				title="Mapa – Sykowni Chłopcy"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				allowfullscreen>
-			</iframe>
-		</div>
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCzqmAF9WhqwhBbT2axfeLAfQRKVEEEwBk&amp;q=place_id:ChIJqxYxlZgfcAoRKnF5NTg_UP4&amp;language=sk&amp;zoom=8"
+            title="Sykowni Chłopcy v Mapách Google"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -512,72 +874,101 @@
 <footer class="footer">
   <div class="wrap footer-grid">
     <div class="footer-col footer-brand">
-      <img src="banner_new.png" alt="Sykowni Chłopcy" class="footer-logo" />
-      <p>Stavebná firma z Grybówa. Zatepľovanie, omietky a fasády v Poľsku a na Slovensku – vlastné vybavenie, poradenstvo a záruka na vykonané práce.</p>
+      <img src="banner_new.png" alt="Sykowni Chłopcy" class="footer-logo" width="607" height="180" loading="lazy" />
+      <p>Stavebná firma z poľsko-slovenského pohraničia. Zatepľovanie, omietky a fasády na Slovensku aj v Poľsku – vlastné vybavenie, poradenstvo a záruka na vykonané práce.</p>
     </div>
     <div class="footer-col">
       <h4>Služby</h4>
       <ul>
         <li><a href="#services">Zatepľovanie budov</a></li>
-        <li><a href="#services">Vonkajšie omietky</a></li>
+        <li><a href="#services">Vonkajšia omietka</a></li>
         <li><a href="#services">Klampiarske práce</a></li>
         <li><a href="#services">Parapety a odkvapy</a></li>
-        <li><a href="#services">Strešné podhľady</a></li>
+        <li><a href="#services">Strešný podhľad</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Spoločnosť</h4>
+      <h4>Firma</h4>
       <ul>
-        <li><a href="#about">O spoločnosti</a></li>
+        <li><a href="#about">O firme</a></li>
         <li><a href="#process">Ako pracujeme</a></li>
         <li><a href="#gallery">Realizácie</a></li>
+        <li class="js-reviews-link" hidden><a href="#reviews">Hodnotenia zákazníkov</a></li>
         <li><a href="#faq">Najčastejšie otázky</a></li>
-        <li><a href="https://sykowni-chlopcy.pl/">Poľská verzia</a></li>
+        <li><a href="https://sykowni-chlopcy.pl/" hreflang="pl">Polska wersja</a></li>
+        <li><a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul class="footer-contact">
-        <li><a href="tel:+421952570317"><i class="fas fa-phone-alt"></i> +421 952 570 317</a></li>
-        <li><a href="mailto:grygieltomek99@gmail.com"><i class="fas fa-envelope"></i> grygieltomek99@gmail.com</a></li>
-        <li><i class="fas fa-map-marker-alt"></i> 33‑330 Grybów</li>
+        <li><a href="tel:+421952570317"><i class="ico" aria-hidden="true"><svg><use href="#i-phone-alt"></use></svg></i> +421 952 570 317</a></li>
+        <li><a href="mailto:schlopcy@gmail.com"><i class="ico" aria-hidden="true"><svg><use href="#i-envelope"></use></svg></i> schlopcy@gmail.com</a></li>
+        <li><a href="https://maps.app.goo.gl/REYcrivsohncNmFw8" target="_blank" rel="noopener"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i> Biała Wyżna 380, 33-330 Grybów</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="wrap footer-bottom-inner">
-      <p>&copy; <span id="year"></span> Sykowni Chłopcy. Všetky práva vyhradené.</p>
-      <p class="footer-area">Grybów · Nowy Sącz · Malopoľsko · Prešov · Poprad · Košice · Bardejov</p>
+      <p>&copy; <span id="year">2026</span> Tomasz Grygiel SYKOWNI-CHLOPCY · IČ DPH PL7343620881</p>
+      <p class="footer-area">Prešov · Poprad · Košice · Bardejov · Grybów · Nowy Sącz · Malopoľsko</p>
     </div>
   </div>
 </footer>
 
 <div class="mobile-bar">
-  <a href="tel:+421952570317" class="mobile-bar-btn primary"><i class="fas fa-phone-alt"></i> Zavolajte</a>
-  <a href="#contact-section" class="mobile-bar-btn"><i class="fas fa-envelope"></i> Cenová ponuka</a>
+  <a href="tel:+421952570317" class="mobile-bar-btn primary"><i class="ico" aria-hidden="true"><svg><use href="#i-phone-alt"></use></svg></i> Zavolať</a>
+  <a href="#contact-section" class="mobile-bar-btn"><i class="ico" aria-hidden="true"><svg><use href="#i-envelope"></use></svg></i> Ponuka</a>
 </div>
 
-<div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Porovnanie pred a po">
-  <button id="lightbox-close" aria-label="Zatvoriť">&times;</button>
-  <div class="lightbox-content">
-    <div class="lightbox-img-wrapper">
-      <span class="lightbox-label">PRED</span>
-      <img id="lightbox-before" src="" alt="Stav pred prácami" />
+<div id="lightbox-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+  <div class="lb-shell">
+    <header class="lb-head">
+      <div class="lb-heading">
+        <p class="lb-place" id="lightbox-place" hidden><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i><span></span></p>
+        <h3 class="lb-title" id="lightbox-title">Porovnanie pred a po</h3>
+      </div>
+      <div class="lb-head-actions">
+        <span class="lb-counter" id="lightbox-counter"></span>
+        <button id="lightbox-close" type="button" aria-label="Zavrieť"><i class="ico" aria-hidden="true"><svg><use href="#i-times"></use></svg></i></button>
+      </div>
+    </header>
+
+    <!-- šípky sedia v tom istom ráme ako fotografie: na veľkej obrazovke po
+         ich bokoch, na telefóne v medzere medzi záberom „pred" a „po" -->
+    <div class="lb-viewer">
+      <div class="lb-stage">
+        <figure class="lb-figure">
+          <div class="lb-frame" id="lightbox-frame-before">
+            <img id="lightbox-before" alt="Stav pred prácami" decoding="async" />
+            <span class="lb-tag">Pred</span>
+          </div>
+        </figure>
+        <figure class="lb-figure">
+          <div class="lb-frame" id="lightbox-frame-after">
+            <img id="lightbox-after" alt="Stav po prácach" decoding="async" />
+            <span class="lb-tag lb-tag-after">Po</span>
+          </div>
+        </figure>
+      </div>
+
+      <button id="lightbox-prev" type="button" class="lightbox-arrow" aria-label="Predchádzajúca realizácia"><i class="ico" aria-hidden="true"><svg><use href="#i-chevron-left"></use></svg></i></button>
+      <button id="lightbox-next" type="button" class="lightbox-arrow" aria-label="Ďalšia realizácia"><i class="ico" aria-hidden="true"><svg><use href="#i-chevron-right"></use></svg></i></button>
     </div>
-    <div class="lightbox-img-wrapper">
-      <span class="lightbox-label">PO</span>
-      <img id="lightbox-after" src="" alt="Stav po prácach" />
+
+    <!-- miniatúry sa objavia len pri stavbách s viacerými zábermi -->
+    <div class="lb-thumbs" id="lightbox-thumbs" role="tablist" aria-label="Zábery z tejto stavby" hidden></div>
+
+    <div class="lb-info" id="lightbox-info">
+      <p class="lb-desc" id="lightbox-desc" hidden></p>
+      <ul class="lb-facts" id="lightbox-facts"></ul>
     </div>
   </div>
-  <button id="lightbox-prev" class="lightbox-arrow" aria-label="Predchádzajúca">&#10094;</button>
-  <button id="lightbox-next" class="lightbox-arrow" aria-label="Nasledujúca">&#10095;</button>
 </div>
 
-<button id="scrollToTopBtn" title="Naspäť hore" aria-label="Naspäť hore">
-  <i class="fas fa-chevron-up"></i>
+<button id="scrollToTopBtn" type="button" title="Späť hore" aria-label="Späť hore">
+  <i class="ico" aria-hidden="true"><svg><use href="#i-chevron-up"></use></svg></i>
 </button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="script.js?v=16"></script>
 </body>
 </html>

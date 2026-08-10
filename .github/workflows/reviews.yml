@@ -1,0 +1,57 @@
+# Denne stahovanie hodnoteni z vizitky Google do suboru reviews.json.
+# Obnovujeme raz denne, pretoze podmienky Google Maps Platform nedovoluju
+# uchovavat text hodnoteni dlhsie ako 30 dni.
+#
+# Je to ta ista vizitka ako na sykowni-chlopcy.pl, ale stahujeme ju
+# s languageCode=sk, aby relativne datumy ("pred tyzdnom") boli po slovensky.
+#
+# Konfiguracia (Settings -> Secrets and variables -> Actions):
+#   secret   GOOGLE_MAPS_API_KEY - kluc z Google Cloud (Places API New), povinny
+#   variable GOOGLE_PLACE_ID     - volitelne, ak sa zmeni vizitka
+#
+# Kym nie je nastaveny secret, workflow skonci bez zmien a stranka
+# sekciu hodnoteni jednoducho neukaze.
+name: Obnov hodnotenia Google
+
+on:
+  schedule:
+    - cron: "37 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "reviews"
+  cancel-in-progress: false
+
+jobs:
+  reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Stiahni hodnotenia
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          # vizitka Sykowni Chlopcy; premenna z nastaveni repozitara ma prednost
+          GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID || 'ChIJqxYxlZgfcAoRKnF5NTg_UP4' }}
+        run: python tools/fetch_reviews.py --language sk --out reviews.json
+
+      - name: Uloz zmeny
+        run: |
+          if [ -n "$(git status --porcelain reviews.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add reviews.json
+            git commit -m "Aktualizacia hodnoteni Google"
+            git push
+          else
+            echo "Bez zmien v hodnoteniach."
+          fi
