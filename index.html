@@ -44,8 +44,8 @@
 
   <!-- trieda .js zapína animácie príchodu; bez skriptov obsah zostáva viditeľný -->
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="style.css?v=54" />
-  <script src="script.js?v=54" defer></script>
+  <link rel="stylesheet" href="style.css?v=72" />
+  <script src="script.js?v=72" defer></script>
 
   <script type="application/ld+json">
   {
@@ -212,8 +212,9 @@
     <ul class="nav-center nav-links" id="nav-links">
       <li><a href="#about">O firme</a></li>
       <li><a href="#services">Služby</a></li>
-      <li><a href="#process">Ako pracujeme</a></li>
+      <li class="js-process-link"><a href="#process">Ako pracujeme</a></li>
       <li><a href="#gallery">Realizácie</a></li>
+      <li><a href="#area">Kde pracujeme</a></li>
       <li class="js-reviews-link" hidden><a href="#reviews">Hodnotenia</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact-section">Kontakt</a></li>
@@ -324,6 +325,12 @@
           Stavebná firma z pohraničia. Realizujeme zatepľovanie,
           omietky a fasády pre zákazníkov na Slovensku aj v Poľsku.
         </p>
+        <p>
+          Na Slovensku pracujeme najmä v okolí
+          <a href="/zateplovanie-presov/">Prešova, Bardejova a Popradu</a> a v okolí
+          <a href="/zateplovanie-kosice/">Košíc, Rožňavy a Spišskej Novej Vsi</a>.
+          Obhliadka aj zameranie sú v celej tejto oblasti bezplatné.
+        </p>
 
 
         <ul class="about-list">
@@ -337,7 +344,7 @@
 
         <div class="about-actions">
           <a href="#gallery" class="btn btn-primary">Pozrite si naše realizácie</a>
-          <a href="#process" class="btn btn-link">Ako prebieha spolupráca <i class="ico ico-arrow" aria-hidden="true"><svg><use href="#i-arrow-right"></use></svg></i></a>
+          <a href="#process" class="btn btn-link js-process-link">Ako prebieha spolupráca <i class="ico ico-arrow" aria-hidden="true"><svg><use href="#i-arrow-right"></use></svg></i></a>
         </div>
       </div>
     </div>
@@ -401,7 +408,7 @@
 <section id="process" aria-labelledby="process-title">
   <div class="wrap section-container">
     <header class="section-head" data-reveal>
-      <span class="section-tag">Ako pracujeme</span>
+      <span class="section-tag">Priebeh spolupráce</span>
       <h2 id="process-title">Ako realizujeme projekt</h2>
       <p class="section-sub">Viete, čo sa deje v každej fáze – a koľko to stojí, ešte než začneme.</p>
     </header>
@@ -446,7 +453,7 @@
 <section id="gallery" class="bg-dark" aria-labelledby="gallery-title">
   <div class="wrap section-container">
     <header class="section-head section-head-light section-head-wide" data-reveal>
-      <span class="section-tag">Realizácie</span>
+      <span class="section-tag">Pred a po</span>
       <h2 id="gallery-title">Ukážky realizácií</h2>
       <p class="section-sub">Kliknite na dlaždicu a pozrite si fotografie spred prác aj po ich dokončení</p>
     </header>
@@ -640,9 +647,159 @@
       </article>
     </div>
 
+
   </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OBSZAR DZIALANIA -->
+<section id="area" class="bg-light" aria-labelledby="area-title">
+  <div class="wrap section-container">
+    <header class="section-head" data-reveal>
+      <span class="section-tag">Oblasť pôsobenia</span>
+      <h2 id="area-title">Kde pracujeme</h2>
+      <p class="section-sub">Na Slovensku pracujeme v Prešovskom a Košickom kraji. Chodíme aj za hranicu do poľského Malopoľska – kliknite na Poľsko na mape.</p>
+    </header>
+  <figure class="area-map" data-view="sk" data-home="sk" data-reveal>
+    <div class="map-switch" role="group" aria-label="Prepnúť zobrazenie mapy medzi Slovenskom a Poľskom">
+      <button type="button" class="map-switch-btn" data-view-btn="pl" aria-pressed="false">Poľsko</button>
+      <button type="button" class="map-switch-btn" data-view-btn="sk" aria-pressed="true">Slovensko</button>
+    </div>
+
+    <div class="area-map-canvas">
+      <svg viewBox="0 0 760 396" role="img" aria-labelledby="mapTitle mapDesc">
+        <title id="mapTitle">Mapa oblasti pôsobenia – Slovensko a Poľsko</title>
+        <desc id="mapDesc">Prepínateľná mapa. V slovenskom zobrazení je zvýraznený Prešovský a Košický kraj s mestami Prešov, Bardejov, Poprad, Košice, Rožňava a Humenné. V poľskom zobrazení je zvýraznené Malopoľsko s mestami Krakov, Tarnów, Nowy Sącz a Grybów.</desc>
+        <g class="map-stage">
+          <g class="map-regions">
+        <g class="map-country" data-country="pl">
+            <path class="map-region r-pl-LD" d="M277 -169L275 -161L281 -160L281 -157L278 -156L280 -153L272 -154L266 -152L265 -143L268 -142L266 -137L249 -135L249 -123L253 -118L248 -110L247 -104L239 -107L233 -106L232 -108L229 -108L229 -104L226 -105L227 -101L224 -100L226 -97L223 -95L224 -89L220 -86L222 -82L219 -79L219 -76L221 -75L220 -68L222 -60L219 -60L217 -53L208 -58L206 -56L207 -54L206 -49L202 -50L201 -46L196 -44L199 -39L199 -34L204 -34L204 -20L228 -15L230 -11L233 -18L235 -18L238 -10L245 -7L261 -10L264 -8L266 -13L274 -8L277 -3L280 -4L283 0L285 -1L289 2L294 0L293 -5L299 -6L300 -2L302 1L305 0L308 4L312 14L320 12L323 16L327 16L328 19L333 20L338 12L342 10L341 4L345 -6L350 -3L352 1L357 5L358 3L360 -7L354 -9L354 -17L357 -21L355 -23L356 -25L374 -25L377 -28L375 -33L387 -31L385 -39L391 -42L390 -46L392 -52L395 -52L396 -56L399 -59L398 -65L393 -64L394 -71L391 -73L388 -84L394 -88L398 -84L405 -83L409 -86L410 -92L403 -95L403 -103L401 -104L406 -105L402 -112L396 -113L392 -120L389 -118L387 -119L382 -116L380 -116L381 -118L375 -118L375 -120L380 -123L372 -130L376 -134L377 -139L372 -141L368 -146L363 -146L360 -151L362 -156L352 -161L350 -165L346 -166L343 -161L340 -163L333 -159L330 -162L326 -159L323 -163L315 -165L310 -171L299 -171L299 -173L297 -174L298 -176L296 -177L290 -173L291 -170L289 -172Z" />
+            <path class="map-region r-pl-DS" d="M-60 -46L-55 -37L-55 -31L-61 -6L-72 16L-58 17L-59 10L-56 4L-60 1L-59 -1L-53 -3L-47 1L-44 -3L-43 2L-38 0L-35 3L-35 14L-27 21L-27 28L-22 24L0 33L10 31L13 41L24 40L27 47L24 49L27 51L33 43L40 47L44 42L53 43L62 53L58 55L58 60L55 63L51 63L41 72L48 80L55 79L56 85L60 86L71 99L73 109L83 114L95 100L97 102L105 96L107 99L110 98L108 89L103 87L100 77L96 75L104 65L112 68L113 58L117 50L128 48L127 40L129 39L126 36L132 33L128 29L130 27L136 27L134 23L136 22L135 19L140 16L137 13L138 9L143 11L143 4L149 4L148 1L152 1L150 -1L150 -7L155 -10L152 -20L158 -24L163 -20L173 -24L169 -31L171 -40L166 -46L170 -52L167 -54L165 -51L160 -54L154 -51L152 -53L150 -64L155 -67L155 -72L149 -78L135 -82L129 -81L125 -80L124 -72L116 -73L113 -72L112 -69L104 -69L98 -74L93 -72L90 -75L88 -80L90 -81L78 -84L81 -89L78 -91L78 -94L73 -95L69 -99L62 -100L56 -97L55 -91L47 -87L47 -84L43 -91L38 -90L39 -97L36 -96L28 -99L27 -102L23 -102L22 -99L25 -98L22 -97L23 -94L14 -91L14 -87L11 -85L13 -82L11 -81L10 -73L0 -71L1 -66L-8 -56L-9 -59L-18 -67L-18 -65L-25 -67L-28 -63L-26 -60L-30 -60L-30 -52L-42 -59L-51 -54L-52 -50L-56 -50L-57 -46Z" />
+            <path class="map-region r-pl-OP" d="M204 -22L199 -19L196 -21L193 -17L181 -13L174 -17L178 -22L176 -25L163 -20L158 -24L152 -20L155 -10L150 -7L150 -1L152 1L148 1L149 4L143 4L143 11L138 9L137 13L140 16L135 19L136 22L134 23L136 27L130 27L128 29L132 33L126 36L129 39L127 40L128 48L117 50L113 58L112 68L104 65L100 70L105 74L117 75L119 78L124 78L124 81L131 86L136 85L136 93L139 91L144 95L148 92L158 93L164 89L164 85L167 86L170 89L167 94L171 97L170 101L156 106L161 113L167 113L171 124L176 125L179 130L190 124L194 126L194 122L191 123L190 120L196 113L195 105L211 102L210 99L219 94L225 95L225 92L223 92L224 86L220 82L223 77L220 74L221 66L230 69L226 58L236 58L241 55L239 54L239 49L233 47L233 43L231 43L230 38L238 31L232 25L236 24L236 21L241 18L244 11L241 6L245 4L244 -1L247 -2L246 -7L238 -10L235 -18L233 -18L230 -11L228 -15Z" />
+            <path class="map-region r-pl-SW" d="M509 25L505 8L504 -3L506 -6L504 -9L501 -5L496 -5L494 -10L483 -6L480 -8L481 -5L476 -2L469 -5L467 -11L450 -10L451 -16L445 -20L448 -24L444 -27L443 -20L438 -18L431 -25L428 -20L423 -23L422 -18L415 -22L412 -19L412 -26L405 -31L400 -29L399 -35L396 -38L397 -42L391 -43L385 -39L387 -34L386 -30L383 -33L381 -31L375 -33L377 -28L374 -25L355 -24L357 -21L354 -17L354 -9L360 -7L358 3L357 5L352 1L350 -3L345 -6L341 4L342 10L334 17L341 23L340 25L337 23L338 27L331 31L332 34L340 35L339 37L345 39L341 44L349 46L347 49L343 48L338 56L347 58L350 63L354 61L358 63L361 62L365 65L372 64L378 67L377 72L383 81L380 82L379 86L385 91L383 93L388 96L386 99L389 100L390 102L394 101L398 103L401 101L402 103L408 100L411 101L420 90L424 92L429 88L442 87L449 82L452 85L461 75L474 69L475 64L488 61L498 45L502 45Z" />
+            <path class="map-region r-pl-LU" d="M648 95L660 85L663 78L685 74L689 70L694 46L691 41L692 35L687 35L688 30L684 29L682 26L685 21L694 21L698 17L690 14L683 6L682 1L679 -1L680 -2L678 -9L674 -13L675 -19L664 -27L660 -37L656 -37L656 -42L661 -53L660 -56L657 -57L658 -61L654 -63L654 -67L650 -68L647 -82L649 -89L647 -92L656 -101L653 -106L656 -113L654 -116L656 -118L655 -120L660 -126L657 -136L654 -140L648 -141L643 -146L644 -149L638 -149L636 -152L620 -155L620 -162L614 -163L606 -154L609 -148L601 -149L602 -147L598 -144L600 -141L594 -140L595 -135L589 -137L585 -135L578 -142L574 -138L575 -131L572 -129L562 -136L556 -129L549 -126L547 -131L545 -131L541 -127L533 -130L530 -127L523 -129L511 -123L509 -120L513 -112L508 -107L514 -106L517 -101L507 -94L512 -89L506 -82L502 -82L500 -78L491 -84L489 -78L495 -72L506 -71L510 -60L507 -53L504 -54L501 -51L507 -48L508 -45L506 -38L503 -37L509 -35L505 -32L503 -23L506 -6L504 -3L505 8L510 28L516 29L525 23L534 26L533 29L537 31L532 42L539 43L541 48L565 54L563 58L565 63L568 63L562 65L569 66L564 70L562 67L557 68L558 72L554 73L554 77L557 76L562 83L577 81L571 85L573 88L605 90L618 77L624 81L633 75L635 75L634 80L639 83L636 89L646 89L645 94Z" />
+            <path class="map-region r-pl-SL" d="M246 -7L247 -2L244 -1L245 4L241 6L244 11L241 18L236 21L236 24L232 25L238 31L230 38L231 43L233 43L233 47L240 50L240 57L226 58L230 69L221 66L220 74L223 77L220 82L224 86L223 92L225 92L225 95L219 94L210 99L211 102L195 105L196 113L193 118L197 121L200 127L203 129L207 127L208 130L213 131L216 137L219 136L218 133L226 135L233 139L235 136L237 137L237 143L240 144L237 148L242 162L249 164L251 168L256 167L261 184L259 187L270 189L270 202L275 203L279 200L285 202L289 201L288 198L291 196L294 186L303 185L303 181L312 174L311 168L303 166L309 160L307 156L299 155L295 144L289 143L286 145L289 141L288 133L284 135L279 133L283 131L284 122L286 119L292 118L290 117L293 110L296 112L295 108L302 108L303 104L300 103L307 101L309 98L299 94L303 94L307 89L307 85L313 86L310 80L313 80L315 74L327 75L330 70L343 72L347 67L353 66L347 58L338 56L343 48L347 49L349 46L341 44L345 39L339 37L340 35L332 34L331 30L333 29L334 31L338 27L337 23L341 25L339 19L334 17L333 20L329 20L320 12L312 14L308 4L305 0L302 1L300 -2L299 -6L293 -5L294 0L289 2L285 -1L283 0L280 -4L277 -3L274 -8L266 -13L264 -8L261 -10Z" />
+            <path class="map-region r-pl-PK" d="M455 82L456 87L450 94L453 96L450 97L452 100L450 108L452 109L449 111L454 111L454 115L451 115L453 117L450 120L454 123L450 130L453 136L461 136L461 140L457 141L456 145L467 150L463 153L461 151L458 155L459 158L464 159L464 165L467 166L468 173L465 178L469 181L467 184L473 191L470 192L471 199L477 201L490 197L492 201L497 201L502 208L507 204L512 209L517 209L523 218L523 225L526 227L536 231L539 230L539 234L547 236L551 235L555 241L562 242L569 241L577 248L584 247L590 253L594 252L592 245L594 241L589 239L586 233L581 233L583 230L579 231L582 226L579 225L582 222L582 208L578 191L573 186L626 114L648 95L645 94L646 89L636 89L639 83L634 80L635 75L633 75L624 81L618 77L605 90L571 88L571 85L577 81L562 83L557 76L554 77L554 73L558 72L557 68L562 67L564 70L569 66L562 65L568 63L565 63L563 58L565 54L541 48L539 43L532 42L537 31L533 29L534 26L525 23L516 29L510 28L509 25L502 45L498 45L488 61L475 64L474 69L464 73Z" />
+            <path class="map-region r-pl-MA" d="M455 82L452 85L449 82L442 87L429 88L424 92L420 90L411 101L408 100L398 103L394 101L390 102L389 100L386 99L388 96L383 93L385 91L379 86L380 82L383 81L377 72L378 67L372 64L365 65L361 62L358 63L353 61L351 63L353 66L347 67L343 72L330 70L327 75L317 73L313 76L313 80L310 80L313 86L307 85L307 89L303 94L299 94L309 98L307 101L300 103L303 104L302 108L295 108L296 112L293 110L290 117L292 118L285 120L282 126L283 131L279 133L284 135L288 133L289 141L286 145L289 143L295 144L299 155L308 157L309 160L303 166L312 170L311 178L316 181L321 196L326 195L325 202L332 204L338 201L338 215L341 218L338 219L336 227L344 229L350 223L362 231L367 213L368 215L373 209L381 210L382 202L386 202L388 204L391 203L391 200L394 201L403 206L406 200L409 203L415 200L418 206L422 208L421 210L427 209L427 213L430 212L432 216L437 215L441 207L446 207L442 200L448 198L455 202L461 195L471 198L470 192L473 191L467 184L469 181L465 178L468 173L467 166L464 165L464 159L459 158L458 155L461 151L463 153L467 150L456 145L457 141L461 140L461 136L453 136L450 130L454 123L450 120L453 117L451 115L454 115L454 111L449 111L452 109L450 108L452 100L450 97L453 96L450 94L456 87Z" />
+        </g>
+        <g class="map-country" data-country="sk">
+            <path class="map-region r-sk-BA" d="M103 312L95 323L94 336L100 339L100 344L104 347L105 358L112 362L115 367L113 376L121 379L128 379L137 368L133 367L133 364L139 364L140 358L141 361L146 361L151 355L149 354L150 351L146 350L150 345L145 340L147 335L143 333L140 325L134 323L132 321L137 316L130 312L135 309L138 300L134 297L127 308L118 311L112 309Z" />
+            <path class="map-region r-sk-TT" d="M128 379L135 381L145 395L151 397L154 403L158 403L166 411L168 405L173 403L174 396L181 391L180 376L177 370L174 371L175 367L170 361L174 361L176 359L174 356L175 355L177 357L180 354L177 349L179 345L176 342L187 321L177 314L181 305L186 306L189 304L186 301L178 300L177 298L173 299L165 294L161 296L159 295L159 298L151 301L146 291L148 287L146 284L142 280L137 282L140 277L124 269L117 275L105 295L102 304L103 312L112 309L118 311L127 308L134 297L137 298L138 303L130 312L137 316L132 321L134 323L140 325L143 333L147 335L145 340L150 345L146 350L150 351L149 354L151 355L146 361L141 361L140 358L139 364L133 364L133 367L137 368Z" />
+            <path class="map-region r-sk-TN" d="M188 302L192 299L189 291L199 292L204 299L211 303L208 307L209 310L212 310L216 317L220 319L231 308L239 307L244 299L249 301L252 292L258 287L254 277L248 273L247 263L250 261L247 259L238 257L233 261L228 260L240 250L239 244L236 242L239 239L237 235L229 229L221 213L205 217L202 222L198 246L195 250L184 251L181 263L172 263L165 271L160 272L151 277L145 273L137 282L142 280L146 284L148 287L146 291L151 301L159 298L159 295L161 296L165 294L173 299L176 297L178 300Z" />
+            <path class="map-region r-sk-NR" d="M166 411L172 413L193 411L214 414L228 410L243 411L251 404L260 403L253 396L254 386L252 383L257 381L260 373L272 373L278 363L279 355L269 357L267 360L259 358L257 359L256 356L259 354L257 349L260 341L252 327L246 335L237 336L234 341L233 338L238 332L233 323L234 316L230 317L233 313L230 311L220 319L216 317L214 312L208 307L211 303L204 299L199 292L190 290L191 301L186 306L181 305L177 314L187 321L176 342L179 345L177 349L180 354L177 357L175 355L174 356L176 359L174 361L170 361L175 367L174 371L177 370L180 374L181 391L174 396L173 403L168 405Z" />
+            <path class="map-region r-sk-ZA" d="M258 286L263 283L266 286L273 285L272 273L276 268L293 267L294 272L297 271L304 263L317 260L330 263L334 266L340 264L356 265L360 262L358 262L352 252L356 251L357 246L358 240L351 238L355 233L348 238L347 228L336 227L338 219L341 218L338 215L338 201L332 204L325 202L326 195L321 196L316 181L312 179L311 176L303 181L303 185L294 186L288 201L279 200L271 203L270 190L268 188L257 188L252 191L237 189L229 202L223 203L224 207L221 211L217 213L221 213L229 229L237 235L239 239L236 242L239 244L240 250L228 260L233 261L238 257L247 259L250 261L247 263L248 273L254 277Z" />
+            <path class="map-region r-sk-BB" d="M230 311L233 313L230 317L234 316L233 323L237 329L237 335L233 338L234 341L237 336L246 335L252 327L260 341L257 349L259 354L256 356L257 359L259 358L267 360L268 358L277 354L278 363L274 369L277 373L284 371L293 373L298 369L306 370L309 367L311 369L316 354L325 348L330 354L334 353L339 355L338 361L343 357L348 361L347 364L350 363L353 359L361 357L366 352L366 348L372 348L375 345L379 347L382 345L389 334L390 327L394 323L393 320L388 322L381 319L385 304L380 303L380 297L370 288L372 276L377 269L370 265L368 267L353 264L339 264L334 266L330 263L317 260L304 263L297 271L294 272L293 267L276 268L272 273L273 285L266 286L263 283L261 283L256 291L252 292L249 301L244 299L239 307L231 308Z" />
+            <path class="map-region r-sk-PO" d="M355 265L368 267L370 265L378 270L383 263L380 260L391 253L396 257L395 255L397 254L395 253L399 251L399 253L403 257L406 256L407 259L414 256L420 257L419 253L434 260L437 259L440 266L449 266L453 270L454 268L459 269L458 275L461 277L464 277L464 274L468 274L469 268L478 268L483 279L496 283L504 280L504 266L513 268L520 274L531 273L531 268L538 262L542 270L552 271L555 268L560 254L565 253L567 242L555 241L551 235L547 236L539 234L539 230L536 231L526 227L523 225L523 218L517 209L512 209L507 204L502 208L497 201L492 201L490 197L474 201L461 195L454 203L448 198L442 200L446 207L441 207L437 215L432 216L430 212L427 213L427 209L421 210L422 208L418 206L416 201L409 203L406 200L403 206L391 200L391 203L388 204L386 202L382 202L381 210L373 209L368 215L367 213L362 231L354 224L347 224L346 227L349 233L347 237L348 238L355 233L351 240L358 240L356 251L352 252L358 262L360 262Z" />
+            <path class="map-region r-sk-KE" d="M394 321L397 318L397 312L414 308L425 306L427 310L431 309L434 314L443 313L448 318L456 312L463 314L464 309L472 309L474 306L480 310L483 316L489 316L493 330L498 336L506 338L507 334L515 334L522 330L528 333L532 332L534 308L536 303L548 293L549 283L552 279L552 271L542 270L538 262L531 268L531 273L520 274L513 268L504 266L504 280L494 283L483 279L478 268L469 268L468 274L464 274L464 277L461 277L458 275L459 269L454 268L453 270L449 266L440 266L437 259L434 260L419 253L420 257L414 256L407 259L406 256L403 257L399 253L399 251L395 253L397 254L395 255L396 257L391 253L380 260L383 264L372 276L372 282L370 286L380 297L380 303L385 304L381 319L383 322Z" />
+        </g>
+          </g>
+          <g class="map-pins-wrap">
+            <g class="map-layer" data-for="pl">
+          <g class="map-pin" data-city="Kraków">
+            <circle class="map-dot" cx="355" cy="121" r="2.23" />
+            <text class="map-label" x="348.82" y="123.78" text-anchor="end">Kraków</text>
+          </g>
+          <g class="map-pin" data-city="Tarnów">
+            <circle class="map-dot" cx="435" cy="123" r="2.23" />
+            <text class="map-label" x="441.18" y="125.78" text-anchor="start">Tarnów</text>
+          </g>
+          <g class="map-pin" data-city="Limanowa">
+            <circle class="map-dot" cx="390" cy="163" r="2.23" />
+            <text class="map-label" x="383.82" y="165.78" text-anchor="end">Limanowa</text>
+          </g>
+          <g class="map-pin" data-city="Nowy Sącz">
+            <circle class="map-dot" cx="414" cy="176" r="2.23" />
+            <text class="map-label" x="407.82" y="178.78" text-anchor="end">Nowy Sącz</text>
+          </g>
+          <g class="map-pin is-project" data-city="Grybów">
+            <circle class="map-halo" cx="434" cy="175" r="6.18" />
+            <circle class="map-dot" cx="434" cy="175" r="3.22" />
+            <text class="map-label" x="440.18" y="177.78" text-anchor="start">Grybów</text>
+          </g>
+          <g class="map-pin" data-city="Nowy Targ">
+            <circle class="map-dot" cx="358" cy="192" r="2.23" />
+            <text class="map-label" x="351.82" y="194.78" text-anchor="end">Nowy Targ</text>
+          </g>
+          <g class="map-pin" data-city="Krynica-Zdrój">
+            <circle class="map-dot" cx="434" cy="200" r="2.23" />
+            <text class="map-label" x="440.18" y="202.78" text-anchor="start">Krynica-Zdrój</text>
+          </g>
+            </g>
+            <g class="map-layer" data-for="sk">
+          <g class="map-pin" data-city="Poprad">
+            <circle class="map-dot" cx="380" cy="246" r="2.43" />
+            <text class="map-label" x="373.26" y="249.03" text-anchor="end">Poprad</text>
+          </g>
+          <g class="map-pin is-project" data-city="Spišská Nová Ves">
+            <circle class="map-halo" cx="402" cy="261" r="6.74" />
+            <circle class="map-dot" cx="402" cy="261" r="3.5" />
+            <text class="map-label" x="395.26" y="264.03" text-anchor="end">Spišská Nová Ves</text>
+          </g>
+          <g class="map-pin is-project" data-city="Bardejov">
+            <circle class="map-halo" cx="461" cy="216" r="6.74" />
+            <circle class="map-dot" cx="461" cy="216" r="3.5" />
+            <text class="map-label" x="454.26" y="219.03" text-anchor="end">Bardejov</text>
+          </g>
+          <g class="map-pin" data-city="Svidník">
+            <circle class="map-dot" cx="485" cy="214" r="2.43" />
+            <text class="map-label" x="491.74" y="217.03" text-anchor="start">Svidník</text>
+          </g>
+          <g class="map-pin is-project" data-city="Prešov">
+            <circle class="map-halo" cx="458" cy="253" r="6.74" />
+            <circle class="map-dot" cx="458" cy="253" r="3.5" />
+            <text class="map-label" x="464.74" y="256.03" text-anchor="start">Prešov</text>
+          </g>
+          <g class="map-pin" data-city="Humenné">
+            <circle class="map-dot" cx="512" cy="262" r="2.43" />
+            <text class="map-label" x="518.74" y="265.03" text-anchor="start">Humenné</text>
+          </g>
+          <g class="map-pin is-project" data-city="Rožňava">
+            <circle class="map-halo" cx="399" cy="296" r="6.74" />
+            <circle class="map-dot" cx="399" cy="296" r="3.5" />
+            <text class="map-label" x="392.26" y="299.03" text-anchor="end">Rožňava</text>
+          </g>
+          <g class="map-pin" data-city="Košice">
+            <circle class="map-dot" cx="458" cy="289" r="2.43" />
+            <text class="map-label" x="464.74" y="292.03" text-anchor="start">Košice</text>
+          </g>
+          <g class="map-pin" data-city="Michalovce">
+            <circle class="map-dot" cx="514" cy="285" r="2.43" />
+            <text class="map-label" x="520.74" y="288.03" text-anchor="start">Michalovce</text>
+          </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="map-legend">
+      <li><span class="lg-dot"></span>Mestá, kam chodíme</li>
+      <li><span class="lg-dot is-project"></span>Dokončené realizácie</li>
+    </ul>
+
+    <figcaption class="map-note">
+      Hranice regiónov: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener">geoBoundaries</a> (ODbL)
+    </figcaption>
+  </figure>
+    <ul class="area-links" data-reveal style="margin-top:22px">
+      <li><a href="/zateplovanie-presov/"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Zatepľovanie Prešov a okolie</a></li>
+      <li><a href="/zateplovanie-kosice/"><i class="ico" aria-hidden="true"><svg><use href="#i-map-marker-alt"></use></svg></i>Zatepľovanie Košice a okolie</a></li>
+    </ul>
+  </div>
+</section>
 <!-- =====================================================================
      HODNOTENIA
 
@@ -872,7 +1029,7 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap footer-grid">
+  <div class="wrap footer-grid footer-grid-5">
     <div class="footer-col footer-brand">
       <img src="banner_new.png" alt="Sykowni Chłopcy" class="footer-logo" width="607" height="180" loading="lazy" />
       <p>Stavebná firma z poľsko-slovenského pohraničia. Zatepľovanie, omietky a fasády na Slovensku aj v Poľsku – vlastné vybavenie, poradenstvo a záruka na vykonané práce.</p>
@@ -888,10 +1045,17 @@
       </ul>
     </div>
     <div class="footer-col">
+      <h4>Regióny</h4>
+      <ul>
+        <li><a href="/zateplovanie-presov/">Zatepľovanie Prešov</a></li>
+        <li><a href="/zateplovanie-kosice/">Zatepľovanie Košice</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
       <h4>Firma</h4>
       <ul>
         <li><a href="#about">O firme</a></li>
-        <li><a href="#process">Ako pracujeme</a></li>
+        <li class="js-process-link"><a href="#process">Ako pracujeme</a></li>
         <li><a href="#gallery">Realizácie</a></li>
         <li class="js-reviews-link" hidden><a href="#reviews">Hodnotenia zákazníkov</a></li>
         <li><a href="#faq">Najčastejšie otázky</a></li>

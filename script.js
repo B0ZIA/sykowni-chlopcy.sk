@@ -135,6 +135,7 @@
 
   /* ---------- nawigacja: cień paska i przycisk „do góry" ---------- */
   function initScrollState() {
+    if (!navbar || !scrollToTopBtn) return;
     let ticking = false;
     const apply = () => {
       const y = window.scrollY;
@@ -255,14 +256,14 @@
         e.preventDefault();
         closeMobileMenu();
 
-        const offset = target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight - 12;
+        const offset = target.getBoundingClientRect().top + window.scrollY - (navbar?.offsetHeight || 0) - 12;
         window.scrollTo({ top: Math.max(offset, 0), behavior: scrollBehavior });
         /* adres w pasku ma odpowiadać temu, co widać – bez skoku strony */
         if (history.replaceState) history.replaceState(null, '', targetId);
       });
     });
 
-    scrollToTopBtn.addEventListener('click', () => {
+    scrollToTopBtn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: scrollBehavior });
       closeMobileMenu();
     });
@@ -439,6 +440,14 @@
      Sekcja startuje ukryta i pokazuje się dopiero przy komplecie opinii –
      mniej niż MIN_REVIEWS wygląda gorzej niż brak sekcji w ogóle. */
   const MIN_REVIEWS = 2;
+
+  /* ---------- przełącznik sekcji „Jak pracujemy" / „Ako pracujeme" ----------
+     true  – sekcja widoczna razem z odnośnikami w menu, w stopce i w bloku
+             „O firmie";
+     false – sekcja i wszystkie odnośniki do niej znikają.
+     Przy false sekcja mignie na ułamek sekundy, zanim skrypt zdąży ją schować –
+     skrypt jest wczytywany z defer. */
+  const SHOW_PROCESS = false;
 
   const GOOGLE_G_SVG = `
     <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -1009,6 +1018,57 @@
     });
   }
 
+  /* sekcję chowamy klasą na <html>, a nie atrybutem hidden – li w menu
+     ma display:flex, które by hidden nadpisało */
+  function initProcessSection() {
+    document.documentElement.classList.toggle('process-off', !SHOW_PROCESS);
+  }
+
+  /* ---------- mapa obszaru: przełączanie ujęć ----------
+     Dwa ujęcia tej samej geometrii pogranicza. Przełącza je atrybut
+     data-view na <figure>; całą animację robi CSS. Klikalna jest też
+     pigułka z nazwą sąsiada leżąca na mapie. */
+  function initAreaMap() {
+    const map = document.querySelector('.area-map[data-view]');
+    if (!map) return;
+
+    const regions = map.querySelector('.map-regions');
+    const buttons = Array.from(map.querySelectorAll('[data-view-btn]'));
+    const countries = Array.from(map.querySelectorAll('.map-country'));
+
+    const setView = view => {
+      if (map.dataset.view === view) return;
+      map.dataset.view = view;
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.viewBtn === view)));
+      delete map.dataset.preview;
+      /* SVG nie zna z-index: o tym, co jest na wierzchu, decyduje kolejność
+         w dokumencie. Kraj z aktualnego ujęcia przesuwamy na koniec grupy
+         regionów, żeby wygaszony sąsiad nie przykrywał jego konturu.
+         Pinezki siedzą w osobnej grupie za regionami, więc zostają na wierzchu
+         niezależnie od tego przestawiania. */
+      const front = countries.find(c => c.dataset.country === view);
+      if (front && regions) regions.appendChild(front);
+    };
+
+    buttons.forEach(b => {
+      b.addEventListener('click', () => setView(b.dataset.viewBtn));
+      /* najechanie na przycisk drugiego kraju pokazuje go na mapie,
+         zanim odwiedzający zdecyduje się kliknąć */
+      const preview = on => {
+        if (b.dataset.viewBtn === map.dataset.view) return;
+        if (on) map.dataset.preview = b.dataset.viewBtn;
+        else delete map.dataset.preview;
+      };
+      b.addEventListener('pointerenter', () => preview(true));
+      b.addEventListener('pointerleave', () => preview(false));
+      b.addEventListener('focus', () => preview(true));
+      b.addEventListener('blur', () => preview(false));
+    });
+
+    /* kliknięcie w wygaszony kraj też przełącza ujęcie */
+    countries.forEach(c => c.addEventListener('click', () => setView(c.dataset.country)));
+  }
+
   /* ---------- start ---------- */
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
@@ -1025,4 +1085,6 @@
   initReviews();
   initBeforePreviews();
   initLightbox();
+  initAreaMap();
+  initProcessSection();
 })();
