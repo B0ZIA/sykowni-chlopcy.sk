@@ -44,8 +44,8 @@
 
   <!-- trieda .js zapína animácie príchodu; bez skriptov obsah zostáva viditeľný -->
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="style.css?v=72" />
-  <script src="script.js?v=72" defer></script>
+  <link rel="stylesheet" href="style.css?v=74" />
+  <script src="script.js?v=74" defer></script>
 
   <script type="application/ld+json">
   {
@@ -75,6 +75,10 @@
           "height": 512
         },
         "hasMap": "https://maps.app.goo.gl/REYcrivsohncNmFw8",
+        "sameAs": [
+          "https://maps.google.com/?cid=18325216394418417962",
+          "https://sykowni-chlopcy.pl/"
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Biała Wyżna 380",
@@ -83,14 +87,19 @@
           "postalCode": "33-330",
           "addressCountry": "PL"
         },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "06:00", "closes": "21:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "08:00", "closes": "21:00" }
+        ],
         "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Prešovský kraj" },
+          { "@type": "AdministrativeArea", "name": "Košický kraj" },
           { "@type": "City", "name": "Prešov" },
           { "@type": "City", "name": "Poprad" },
           { "@type": "City", "name": "Košice" },
           { "@type": "City", "name": "Bardejov" },
-          { "@type": "AdministrativeArea", "name": "Prešovský kraj" },
-          { "@type": "AdministrativeArea", "name": "Košický kraj" },
-          { "@type": "AdministrativeArea", "name": "Malopoľsko" },
+          { "@type": "AdministrativeArea", "name": "Okres Gorlice" },
+          { "@type": "AdministrativeArea", "name": "Okres Nowy Sącz" },
           { "@type": "City", "name": "Grybów" },
           { "@type": "City", "name": "Nowy Sącz" }
         ],
@@ -281,19 +290,19 @@
 
 <section id="stats" class="stats-band" aria-label="Firma v číslach">
   <div class="wrap stats-grid">
-  <div class="stat" data-reveal data-reveal-delay="80">
+    <div class="stat" data-reveal data-reveal-delay="80">
       <span class="stat-num" data-count="30" data-suffix="+">30+</span>
       <span class="stat-label">spokojných zákazníkov</span>
     </div>
     <div class="stat" data-reveal data-reveal-delay="160">
-      <span class="stat-num" data-count="15000" data-suffix="m²">100%</span>
+      <span class="stat-num" data-count="15000" data-suffix=" m²">15 000 m²</span>
       <span class="stat-label">zrealizovanej fasády</span>
     </div>
-	<div class="stat" data-reveal>
+    <div class="stat" data-reveal data-reveal-delay="240">
       <span class="stat-num" data-count="5" data-suffix="">5</span>
       <span class="stat-label">rokov skúseností majiteľa</span>
     </div>
-	<div class="stat" data-reveal data-reveal-delay="240">
+    <div class="stat" data-reveal data-reveal-delay="320">
       <span class="stat-num" data-count="0" data-suffix=" €">0 €</span>
       <span class="stat-label">cena ponuky a dojazdu</span>
     </div>
@@ -650,19 +659,6 @@
 
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- OBSZAR DZIALANIA -->
