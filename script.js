@@ -442,7 +442,7 @@
      reviews.json wypełnia raz na dobę GitHub Action (tools/fetch_reviews.py).
      Sekcja startuje ukryta i pokazuje się dopiero przy komplecie opinii –
      mniej niż MIN_REVIEWS wygląda gorzej niż brak sekcji w ogóle. */
-  const MIN_REVIEWS = 2;
+  const MIN_REVIEWS = 1;
 
   /* ---------- przełącznik sekcji „Jak pracujemy" / „Ako pracujeme" ----------
      true  – sekcja widoczna razem z odnośnikami w menu, w stopce i w bloku
