@@ -30,6 +30,7 @@
       reviewAuthorFallback: 'Klient Google',
       /* po „na podstawie" liczebnik zawsze łączy się z dopełniaczem: 3 opinii, 5 opinii */
       reviewsBasedOn: count => `na podstawie ${count} opinii`,
+      heroRating: rating => `${rating} w Google`,
       reviewsPage: page => `Opinie – strona ${page}`,
       ratingLabel: rating => `Ocena ${rating} na 5`,
       lightboxTitle: 'Porównanie przed i po',
@@ -55,6 +56,7 @@
       reviewLess: 'Zbaliť',
       reviewAuthorFallback: 'Zákazník Google',
       reviewsBasedOn: count => `na základe ${count} hodnotení`,
+      heroRating: rating => `${rating} v Google`,
       reviewsPage: page => `Hodnotenia – strana ${page}`,
       ratingLabel: rating => `Hodnotenie ${rating} z 5`,
       lightboxTitle: 'Porovnanie pred a po',
@@ -522,18 +524,34 @@
     return card;
   }
 
+  /* plakietka z oceną w hero – to samo źródło danych co sekcja opinii,
+     więc pokazuje się i znika razem z nią */
+  function updateHeroRating(rating, count) {
+    const badge = document.getElementById('hero-rating');
+    if (!badge) return;
+    const stars = badge.querySelector('.rv-stars');
+    if (stars) stars.replaceWith(buildStars(rating));
+    const num = document.getElementById('hero-rating-num');
+    if (num) num.textContent = t.heroRating(rating.toFixed(1).replace('.', ','));
+    const counter = document.getElementById('hero-rating-count');
+    if (counter) counter.textContent = t.reviewsBasedOn(count);
+    badge.hidden = false;
+  }
+
   function renderGoogleReviews(data, track) {
     if (!data || !Array.isArray(data.reviews) || data.reviews.length < MIN_REVIEWS) return false;
 
     track.replaceChildren(...data.reviews.map(buildReviewCard));
 
-    const summary = document.querySelector('.google-card');
-    if (!summary) return true;
-
     const count = data.ratingCount || data.reviews.length;
     const rating = typeof data.rating === 'number'
       ? data.rating
       : data.reviews.reduce((sum, r) => sum + (r.rating || 5), 0) / data.reviews.length;
+
+    updateHeroRating(rating, count);
+
+    const summary = document.querySelector('.google-card');
+    if (!summary) return true;
 
     const num = summary.querySelector('.gc-num');
     if (num) num.textContent = rating.toFixed(1).replace('.', ',');
