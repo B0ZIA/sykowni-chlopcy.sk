@@ -772,27 +772,9 @@ h3, h4 { line-height: 1.3; letter-spacing: -0.015em; }
 /* dopóki zdjęcie „przed" się nie wczyta, nie ma czego przenikać */
 .gallery-card:not(.has-before) .gc-open:hover .gc-after { opacity: 1; }
 
-/* przełącznik Przed / Po – podpowiada, że kafelek ma dwa stany */
-.gc-switch {
-  position: absolute; top: 14px; right: 14px; z-index: 3;
-  display: inline-flex; align-items: center; gap: 9px;
-  padding: 7px 12px; border-radius: var(--radius-sm);
-  background: rgba(7, 10, 18, 0.8); border: 1px solid var(--border-dark);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  font-family: var(--font-head); font-weight: 700; font-size: 0.7rem;
-  letter-spacing: 0.06em; text-transform: uppercase; line-height: 1;
-}
-.gc-switch span { color: rgba(255, 255, 255, 0.6); transition: color 0.3s ease; }
-.gc-switch span + span { padding-left: 9px; border-left: 1px solid rgba(255, 255, 255, 0.2); }
-.gc-switch span:last-child { color: var(--accent-soft); }
-.gc-open:hover .gc-switch span:first-child,
-.gc-open:focus-visible .gc-switch span:first-child { color: var(--accent-soft); }
-.gc-open:hover .gc-switch span:last-child,
-.gc-open:focus-visible .gc-switch span:last-child { color: rgba(255, 255, 255, 0.42); }
-
 .gc-tags {
   position: absolute; top: 14px; left: 14px; z-index: 3;
-  display: flex; flex-wrap: wrap; gap: 6px; max-width: calc(100% - 130px);
+  display: flex; flex-wrap: wrap; gap: 6px; max-width: calc(100% - 28px);
 }
 .gc-place {
   display: inline-flex; align-items: center; gap: 7px;
@@ -1513,11 +1495,9 @@ a.info-item:hover .icon-circle { background: var(--accent); border-color: var(--
   /* rozmiar dobrany tak, żeby „Ocieplenia i elewacje,” zawsze mieściło się w jednej linii */
   #hero h1 { font-size: min(8.5vw, 3.2rem); line-height: 1.12; margin-bottom: 18px; }
   .hero-subtitle { font-size: 1rem; max-width: none; }
-  .hero-kicker { margin-bottom: 18px; padding: 7px 13px; font-size: 0.68rem; letter-spacing: 0.14em; }
-  /* przyciski przejmuje dolny pasek, więc plakietka z oceną staje tuż pod opisem */
-  .hero-rating { margin-top: 24px; gap: 10px; padding: 9px 15px 9px 12px; }
-  .hero-rating .rv-stars { font-size: 0.82rem; }
-  .hero-rating-txt strong { font-size: 0.88rem; }
+  /* na telefonie pierwszy ekran ma być czystym kadrem: nadtytuł i plakietka
+     Google schodzą, żeby nagłówek i konkret miały miejsce */
+  .hero-kicker, .hero-rating { display: none; }
 
   .hero-chips {
     display: grid; grid-template-columns: 1fr; gap: 0;
@@ -1635,23 +1615,26 @@ a.info-item:hover .icon-circle { background: var(--accent); border-color: var(--
   }
   .mobile-bar-btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: var(--shadow-accent); }
 
-  /* Na telefonie zdjęcia stoją jedno pod drugim. Boczny margines znika,
-     bo strzałki przenoszą się w przerwę między ujęciami – zdjęcia
-     dostają całą szerokość ekranu. */
+  /* Na telefonie zdjęcia stoją jedno pod drugim i zajmują całą szerokość
+     ekranu, a strzałki wracają na boki – kciuk trafia w nie z krawędzi. */
   .lb-shell { padding: 10px 8px; gap: 8px; }
   .lb-head { padding-bottom: 8px; }
   .lb-place { font-size: 0.68rem; letter-spacing: 0.1em; }
   .lb-counter { display: none; }
   #lightbox-close { width: 36px; height: 36px; font-size: 0.95rem; }
 
-  .lb-stage { grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 52px; }
+  .lb-stage { grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 14px; }
   .lb-frame { border-radius: 12px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45); }
 
-  /* obie strzałki lądują na środku przerwy, obok siebie – kciuk ma je
-     dokładnie tam, gdzie patrzy, i nie zasłaniają zdjęć */
-  .lightbox-arrow { width: 46px; height: 46px; font-size: 1.2rem; background: rgba(255, 255, 255, 0.12); }
-  #lightbox-prev { left: calc(50% - 54px); right: auto; }
-  #lightbox-next { right: calc(50% - 54px); left: auto; }
+  /* strzałki przy krawędziach, na zdjęciu – ciemne szkło trzyma je
+     czytelne nad każdym kadrem */
+  .lightbox-arrow {
+    width: 44px; height: 44px; font-size: 1.15rem;
+    background: rgba(7, 10, 18, 0.62); border-color: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
+  #lightbox-prev { left: 6px; right: auto; }
+  #lightbox-next { right: 6px; left: auto; }
 
   /* plakietki „Przed" i „Po" wyśrodkowane u góry każdego zdjęcia */
   .lb-tag {
@@ -2058,7 +2041,7 @@ a, button, select, .service-item, .faq-q, .info-item { touch-action: manipulatio
   .navbar, .hero-bg, .hero-overlay, .hero-scroll, .mobile-bar, #scrollToTopBtn,
   .cta-band, .map-box, #lightbox-overlay, .skip-link, .reviews-controls,
   .hero-actions, .hero-rating, .contact-box form, .gallery-more,
-  .gc-cue, .gc-switch, .gc-place, .gc-before { display: none !important; }
+  .gc-cue, .gc-place, .gc-before { display: none !important; }
 
   /* animowane detale wracają do stanu końcowego */
   .section-tag::before { width: 26px !important; }
